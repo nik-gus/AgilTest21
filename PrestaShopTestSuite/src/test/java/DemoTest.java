@@ -10,7 +10,7 @@ import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
-public class MyFirstTest  {
+class DemoTest {
 
 TopMenu top = getTopMenu();
 AuthPage authPage = AuthPage.getAuthPage();
