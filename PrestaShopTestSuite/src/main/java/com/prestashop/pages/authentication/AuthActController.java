@@ -1,5 +1,6 @@
 package com.prestashop.pages.authentication;
 
+import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.LocalDateTime;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
+import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -74,4 +76,7 @@ public class AuthActController {
         return this;
     }
 
+    public CommonVerification andThen() {
+        return getCommonVerification();
+    }
 }

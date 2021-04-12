@@ -1,10 +1,12 @@
 package com.prestashop.pages.top;
 
+import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.top.TopMenu.*;
+import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -38,5 +40,8 @@ public class TopActController {
         return this;
     }
 
+    public CommonVerification andThen() {
+        return getCommonVerification();
+    }
 
 }
