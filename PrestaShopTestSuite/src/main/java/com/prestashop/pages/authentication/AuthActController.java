@@ -21,7 +21,7 @@ public class AuthActController {
     }
 
     public AuthActController selectCreateAccountLink() {
-        driver.findElement(noAccountLink()) //funkar? annars linktext
+        driver.findElement(noAccountLink())
                 .click();
         return this;
     }

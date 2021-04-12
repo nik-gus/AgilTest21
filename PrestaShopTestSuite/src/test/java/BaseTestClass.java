@@ -17,7 +17,7 @@ public class BaseTestClass {
         driver = getDriver();
         wait = getWebDriverWait();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://localhost:8001");
+        driver.get("http://40.76.27.113:8085/en/");
 
 
     }

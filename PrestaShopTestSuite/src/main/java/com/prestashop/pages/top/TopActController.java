@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static com.prestashop.pages.top.TopMenu.*;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -20,19 +21,19 @@ public class TopActController {
     }
 
     public TopActController selectContactButton() {
-        driver.findElement(By.id("contact-link"))
+        driver.findElement(contactUsLink())
                 .click();
         return this;
     }
 
     public TopActController selectHomeLink() {
-        driver.findElement(By.cssSelector(("#_desktop_logo > h1 > a > img")))
+        driver.findElement(homeLink())
                 .click();
         return this;
     }
 
     public TopActController selectClothes() {
-        driver.findElement(By.id("category-3"))
+        driver.findElement(clothesLink())
                 .click();
         return this;
     }

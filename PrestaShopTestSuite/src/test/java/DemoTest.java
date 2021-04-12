@@ -41,11 +41,7 @@ private void setup() {
                 .submit();
         top.verify()
                 .userLoggedIn("Tolvan Tolvansson");
-
-
-
-
-
     }
+
 
 }
