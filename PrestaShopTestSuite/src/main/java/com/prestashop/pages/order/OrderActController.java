@@ -43,6 +43,7 @@ public class OrderActController {
         return this;
     }
 
+
     public OrderActController payByBankWire() {
         driver.findElement(payByBankWireRadioButton())
                 .click();

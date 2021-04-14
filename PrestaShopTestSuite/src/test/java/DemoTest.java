@@ -1,9 +1,13 @@
 import com.prestashop.pages.authentication.AuthPage;
+import com.prestashop.pages.cart.CartPage;
+import com.prestashop.pages.clothes.ClothesPage;
 import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;
 
-import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
+import static com.prestashop.pages.authentication.AuthPage.*;
+import static com.prestashop.pages.cart.CartPage.getCartPage;
+import static com.prestashop.pages.clothes.Size.MEDIUM;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
@@ -13,6 +17,8 @@ class DemoTest extends BaseTestClass {
 TopMenu top = getTopMenu();
 AuthPage authPage = getAuthPage();
 OrderPage order = getOrderPage();
+ClothesPage clothes = ClothesPage.getClothesPage();
+CartPage cart = getCartPage();
 
     @Test
     void testCreateAccount() {
@@ -26,7 +32,7 @@ OrderPage order = getOrderPage();
                 .enterRandomizedEmail()
                 .enterPassword("password")
                 .agreeToTerms()
-                .save();
+                .saveAccount();
         top.verify()
                 .userLoggedIn("Tolvan Tolvansson");
     }
@@ -57,6 +63,48 @@ OrderPage order = getOrderPage();
                 .authenticationFailed();
     }
 
+    @Test
+    void testPlaceOrder() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .enterEmail(TEST_USER_EMAIL)
+                .enterPassword(TEST_USER_PASSWORD)
+                .signIn();
+        top.act()
+                .selectClothes();
+        clothes.act()
+                .selectFirstArticleOfClothing()
+                .addToCart()
+                .proceedToCart();
+        cart.act()
+                .proceedToCheckout();
+        order.act()
+                .enterAddress("testadress")
+                .enterPostalCode("123 45")
+                .enterCity("sthlm")
+                .continueToShipping()
+                .continueToPayment()
+                .payByBankWire()
+                .agreeToTerms()
+                .placeOrder();
+        order.verify()
+                .orderConfirmed();
+    }
+
+    @Test
+    void testAddClothesToCart() {
+        top.act()
+                .selectClothes();
+        clothes.act()
+                .selectLastArticleOfClothing()
+                //.selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_T_SHIRT)
+                .selectSize(MEDIUM)
+                //.selectColor(BLACK)
+                .addToCart();
+        clothes.verify()
+                .productAddedToShoppingCart();
+    }
 
 
 }

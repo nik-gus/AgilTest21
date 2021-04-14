@@ -69,7 +69,7 @@ public class AuthActController {
         return this;
     }
 
-    public AuthActController save() { //returnera annat??
+    public AuthActController saveAccount() { //returnera annat??
         driver.findElement(submitButton())
                 .click();
         return this;
@@ -84,4 +84,5 @@ public class AuthActController {
     public CommonVerification andThen() {
         return getCommonVerification();
     }
+
 }

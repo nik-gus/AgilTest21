@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 
 public class AuthPage {
 
+    public static final String TEST_USER_EMAIL =
+            "tolvan@mail.com";
+    public static final String TEST_USER_PASSWORD =
+            "tolvan";
+
     private AuthActController act;
     private AuthVerifyController verify;
 
@@ -48,6 +53,7 @@ public class AuthPage {
     /* LOGIN ELEMENTS */
     public static By signInButton() { return By.id("submit-login"); }
 
+    /* ALERTS */
     public static By alertMessage() { return By.className("alert-danger"); }
 
 
