@@ -1,15 +1,18 @@
 import com.prestashop.pages.authentication.AuthPage;
+import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;
 
-import static com.prestashop.pages.authentication.AuthPage.alertMessage;
+import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
+import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 
 class DemoTest extends BaseTestClass {
 
 TopMenu top = getTopMenu();
-AuthPage authPage = AuthPage.getAuthPage();
+AuthPage authPage = getAuthPage();
+OrderPage order = getOrderPage();
 
     @Test
     void testCreateAccount() {
@@ -53,5 +56,7 @@ AuthPage authPage = AuthPage.getAuthPage();
         authPage.verify()
                 .authenticationFailed();
     }
+
+
 
 }
