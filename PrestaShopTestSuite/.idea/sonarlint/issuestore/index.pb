@@ -1,0 +1,25 @@
+
+G
+PrestaShopTestSuite.iml,9/a/9a85ddf0bf707730ad95f47843332428b76f6d09
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+{
+Ksrc/main/java/com/prestashop/pages/authentication/AuthVerifyController.java,1/0/10a43158d38d61585cd0952adda59cb46a61802d
+o
+?src/main/java/com/prestashop/pages/top/TopVerifyController.java,6/7/67431e0c2919cbb3f60a7e514f51bdd3b78b3b6f
+c
+3src/main/java/com/prestashop/pages/top/TopMenu.java,a/a/aa8efee453902e7ac2344fb67a3c566fb674def8
+o
+?src/main/java/com/prestashop/pages/authentication/AuthPage.java,2/7/27a1fc96bade0ae70fe59b00eceb3d862ca0d944
+x
+Hsrc/main/java/com/prestashop/pages/authentication/AuthActController.java,b/4/b48155e1854e9e7eb840c2f4daf674566fd35df1
+l
+<src/main/java/com/prestashop/pages/top/TopActController.java,1/d/1da99e34670d577bee3097416712b4444f2ccc4a
+j
+:src/main/java/com/prestashop/utils/CommonVerification.java,e/8/e8dfff1b1e758511a10b56484f7671864622e250
+e
+5src/main/java/com/prestashop/utils/DriverFactory.java,e/3/e31971ff5cf0e95769d06f1f8465744c75af9dc5
+P
+ src/test/java/BaseTestClass.java,3/8/384917ebf1f2d75b050feef219c6d8b63b620fb3
+K
+src/test/java/DemoTest.java,6/1/615cbd7f67e2ec6a315190703deac911045928d5

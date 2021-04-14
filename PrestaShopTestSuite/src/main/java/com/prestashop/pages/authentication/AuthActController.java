@@ -1,7 +1,6 @@
 package com.prestashop.pages.authentication;
 
 import com.prestashop.utils.CommonVerification;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -60,7 +59,7 @@ public class AuthActController {
 
     public AuthActController enterPassword(String password) {
         driver.findElement((passwordField()))
-                .sendKeys(password + Keys.ENTER);
+                .sendKeys(password);
         return this;
     }
 
@@ -70,8 +69,14 @@ public class AuthActController {
         return this;
     }
 
-    public AuthActController submit() { //returnera annat??
+    public AuthActController save() { //returnera annat??
         driver.findElement(submitButton())
+                .click();
+        return this;
+    }
+
+    public AuthActController signIn() {
+        driver.findElement(signInButton())
                 .click();
         return this;
     }

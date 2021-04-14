@@ -1,33 +1,18 @@
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
+import static com.prestashop.pages.authentication.AuthPage.alertMessage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
-import static com.prestashop.utils.DriverFactory.getDriver;
-import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
-class DemoTest {
+
+class DemoTest extends BaseTestClass {
 
 TopMenu top = getTopMenu();
 AuthPage authPage = AuthPage.getAuthPage();
 
-WebDriver driver;
-WebDriverWait wait;
-
-private void setup() {
-    driver = getDriver();
-    wait = getWebDriverWait();
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    driver.get("http://40.76.27.113:8085/en/");
-}
-
     @Test
-    void createAccount() {
-        setup();
+    void testCreateAccount() {
         top.act()
                 .selectSignInButton();
         authPage.act()
@@ -38,10 +23,35 @@ private void setup() {
                 .enterRandomizedEmail()
                 .enterPassword("password")
                 .agreeToTerms()
-                .submit();
+                .save();
         top.verify()
                 .userLoggedIn("Tolvan Tolvansson");
     }
 
+    @Test
+    void testSignInWithValidCredentials() {
+        top.act()
+                .selectSignInButton()
+                    .andThen()
+                .verifyPageTitle("Login");
+        authPage.act()
+                .enterEmail("tolvan1@mail.com")
+                .enterPassword("tolvan1")
+                .signIn();
+        top.verify()
+                .userLoggedIn("tolvan tolvansson");
+    }
+
+    @Test
+    void testSignInWithNoExistingAccount() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .enterRandomizedEmail()
+                .enterPassword("2343e423")
+                .signIn();
+        authPage.verify()
+                .authenticationFailed();
+    }
 
 }
