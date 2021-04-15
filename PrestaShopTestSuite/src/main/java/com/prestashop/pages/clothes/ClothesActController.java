@@ -1,11 +1,13 @@
 package com.prestashop.pages.clothes;
 
 import com.prestashop.utils.Color;
+import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.clothes.ClothesPage.*;
+import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -66,6 +68,11 @@ public class ClothesActController {
     public void proceedToCart() {
         driver.findElement(By.xpath("//a[@class='btn btn-primary']"))
                 .click();
+    }
+
+
+    public CommonVerification andThen() {
+        return getCommonVerification();
     }
 
 }

@@ -1,10 +1,12 @@
 package com.prestashop.pages.order;
 
+import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.order.OrderPage.*;
+import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -60,6 +62,11 @@ public class OrderActController {
         wait.until(ExpectedConditions.elementToBeClickable(paymentConfirmationButton()))
                 .click();
         return this;
+    }
+
+
+    public CommonVerification andThen() {
+        return getCommonVerification();
     }
 
 }

@@ -37,18 +37,15 @@ public class AuthPage {
     public static By noAccountLink() {
         return By.xpath("//div[@class='no-account']");
     }
-    public static By customerForm() {
-        return By.id("customer-form");
-    }
 
     /* CREATE ACCOUNT ELEMENTS */
-    public static By socialTitleMr() { return By.xpath("//div[@class='col-md-6 form-control-valign']//label[1]"); }
+    public static By socialTitleMr() { return By.name("id_gender"); }
     public static By firstNameField() { return By.name("firstname"); }
     public static By lastNameField() { return By.name("lastname"); }
     public static By emailField() { return By.name("email"); }
     public static By passwordField() { return By.name("password"); }
     public static By agreeToTermsCheckBox() { return By.name("psgdpr"); }
-    public static By submitButton() { return By.cssSelector("#customer-form > footer > button"); }
+    public static By submitButton() { return By.cssSelector("[data-link-action='save-customer']"); }
 
     /* LOGIN ELEMENTS */
     public static By signInButton() { return By.id("submit-login"); }

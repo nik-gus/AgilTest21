@@ -3,6 +3,7 @@ import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
 import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
@@ -63,6 +64,7 @@ CartPage cart = getCartPage();
                 .authenticationFailed();
     }
 
+//    @Disabled
     @Test
     void testPlaceOrder() {
         top.act()
@@ -80,9 +82,9 @@ CartPage cart = getCartPage();
         cart.act()
                 .proceedToCheckout();
         order.act()
-                .enterAddress("testadress")
-                .enterPostalCode("123 45")
-                .enterCity("sthlm")
+//                .enterAddress("testadress")
+//                .enterPostalCode("123 45")
+//                .enterCity("sthlm")
                 .continueToShipping()
                 .continueToPayment()
                 .payByBankWire()
@@ -98,13 +100,18 @@ CartPage cart = getCartPage();
                 .selectClothes();
         clothes.act()
                 .selectLastArticleOfClothing()
-                //.selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_T_SHIRT)
                 .selectSize(MEDIUM)
-                //.selectColor(BLACK)
                 .addToCart();
         clothes.verify()
                 .productAddedToShoppingCart();
     }
 
 
-}
+
+
+
+
+
+
+
+} // end class

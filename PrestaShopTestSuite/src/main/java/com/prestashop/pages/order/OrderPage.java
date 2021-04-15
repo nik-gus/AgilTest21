@@ -28,7 +28,7 @@ public class OrderPage {
     public static By postalCodeTextField() { return By.name("postcode"); }
     public static By cityTextField() { return By.name("city"); }
 
-    public static By addressesContinueButton() { return By.cssSelector("#delivery-address > div > footer > button"); }
+    public static By addressesContinueButton() { return By.name("confirm-addresses"); }
 
     public static By shippingContinueButton() { return By.name("confirmDeliveryOption"); }
 
