@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.cart.CartPage.getCartPage;
+import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
 import static com.prestashop.pages.clothes.Size.MEDIUM;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
@@ -18,7 +19,7 @@ class DemoTest extends BaseTestClass {
 TopMenu top = getTopMenu();
 AuthPage authPage = getAuthPage();
 OrderPage order = getOrderPage();
-ClothesPage clothes = ClothesPage.getClothesPage();
+ClothesPage clothes = getClothesPage();
 CartPage cart = getCartPage();
 
     @Test
@@ -106,7 +107,16 @@ CartPage cart = getCartPage();
                 .productAddedToShoppingCart();
     }
 
+    @Test
+    void testsomething() {
+        order.act()
+                .enterAddress("testadress")
+                .enterCity("ksadjflas")
+                .placeOrder();
+        order.verify()
+                .orderConfirmed();
 
+}
 
 
 
