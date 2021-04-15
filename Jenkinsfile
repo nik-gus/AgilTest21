@@ -1,12 +1,12 @@
 pipeline {
     environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-14.0.2\\bin"
+        PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
     }
     agent {
         node any 
     }
     tools {
-        maven 'Maven dator'
+        maven 'M3'
     }
     stages {
         stage ('Build') {
