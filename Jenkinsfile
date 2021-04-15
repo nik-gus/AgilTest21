@@ -3,7 +3,7 @@ pipeline {
         PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-14.0.2\\bin"
     }
     agent {
-        node { any }
+        node any 
     }
     tools {
         maven 'Maven dator'
