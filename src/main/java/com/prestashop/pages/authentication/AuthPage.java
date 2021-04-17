@@ -52,6 +52,8 @@ public class AuthPage {
 
     /* ALERTS */
     public static By alertMessage() { return By.className("alert-danger"); }
+    public static By shortPasswordMessage() { return By.name("password"); }
+    public static By notAgreeMessage() { return By.name("psgdpr"); }
 
 
 
