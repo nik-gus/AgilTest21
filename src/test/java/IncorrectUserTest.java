@@ -12,7 +12,7 @@ public class IncorrectUserTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
 
-    @Disabled
+    @Test
     void testCreateEmailExist(){
         top.act()
                 .selectSignInButton();
@@ -28,7 +28,7 @@ public class IncorrectUserTest extends BaseTestClass{
                 .emailExistFailed();
     }
 
-    @Disabled
+    @Test
     void testShortPassword(){
         top.act()
                 .selectSignInButton();
