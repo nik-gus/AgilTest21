@@ -1,3 +1,4 @@
+
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
@@ -89,7 +90,7 @@ CartPage cart = getCartPage();
                 .continueToShipping()
                 .continueToPayment()
                 .payByBankWire()
-                .agreeToTerms()
+                .agreeToTermsAndConditions()
                 .placeOrder();
         order.verify()
                 .orderConfirmed();
@@ -101,22 +102,12 @@ CartPage cart = getCartPage();
                 .selectClothes();
         clothes.act()
                 .selectLastArticleOfClothing()
-                .selectSize(MEDIUM)
+                .chooseSize(MEDIUM)
                 .addToCart();
         clothes.verify()
-                .productAddedToShoppingCart();
+                .successfullyAddedToShoppingCart();
     }
 
-    @Test
-    void testsomething() {
-        order.act()
-                .enterAddress("testadress")
-                .enterCity("ksadjflas")
-                .placeOrder();
-        order.verify()
-                .orderConfirmed();
-
-}
 
 
 
