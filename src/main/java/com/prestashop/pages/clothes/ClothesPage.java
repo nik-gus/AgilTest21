@@ -5,10 +5,13 @@ import org.openqa.selenium.By;
 
 public class ClothesPage {
 
+    public static final String PAGE_TITLE_CLOTHES =
+            "Clothes";
     public static final String HUMMINGBIRD_PRINTED_T_SHIRT =
             "Hummingbird printed t-shirt";
     public static final String HUMMINGBIRD_PRINTED_SWEATER =
             "Brown bear printed sweater";
+
 
     private ClothesActController act;
     private ClothesVerifyController verify;

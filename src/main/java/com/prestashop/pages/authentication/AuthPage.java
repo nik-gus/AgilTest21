@@ -39,7 +39,9 @@ public class AuthPage {
     }
 
     /* CREATE ACCOUNT ELEMENTS */
-    public static By socialTitleMr() { return By.name("id_gender"); }
+    //possible refactoring to seperate abstract page class
+    public static By socialTitleMr() { return By.xpath("//*[@id='customer-form']/section/div[1]/div[1]/label[1]/span/input"); }
+    public static By socialTitleMrs() { return By.xpath("//*[@id='customer-form']/section/div[1]/div[1]/label[2]/span/input"); }
     public static By firstNameField() { return By.name("firstname"); }
     public static By lastNameField() { return By.name("lastname"); }
     public static By emailField() { return By.name("email"); }

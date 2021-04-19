@@ -1,3 +1,4 @@
+
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.cart.CartPage.getCartPage;
+import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
 import static com.prestashop.pages.clothes.Size.MEDIUM;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
@@ -18,7 +20,7 @@ class DemoTest extends BaseTestClass {
 TopMenu top = getTopMenu();
 AuthPage authPage = getAuthPage();
 OrderPage order = getOrderPage();
-ClothesPage clothes = ClothesPage.getClothesPage();
+ClothesPage clothes = getClothesPage();
 CartPage cart = getCartPage();
 
     @Test
@@ -88,7 +90,7 @@ CartPage cart = getCartPage();
                 .continueToShipping()
                 .continueToPayment()
                 .payByBankWire()
-                .agreeToTerms()
+                .agreeToTermsAndConditions()
                 .placeOrder();
         order.verify()
                 .orderConfirmed();
@@ -100,12 +102,11 @@ CartPage cart = getCartPage();
                 .selectClothes();
         clothes.act()
                 .selectLastArticleOfClothing()
-                .selectSize(MEDIUM)
+                .chooseSize(MEDIUM)
                 .addToCart();
         clothes.verify()
-                .productAddedToShoppingCart();
+                .successfullyAddedToShoppingCart();
     }
-
 
 
 
