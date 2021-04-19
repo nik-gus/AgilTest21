@@ -25,10 +25,10 @@ public class ProductInCartTest extends BaseTestClass {
                 .selectClothes();
         clothes.act()
                 .selectLastArticleOfClothing()
-                .selectSize(MEDIUM)
+                .chooseSize(MEDIUM)
                 .addToCart();
         clothes.verify()
-                .productAddedToShoppingCart();
+                .successfullyAddedToShoppingCart();
     }
 
 }
