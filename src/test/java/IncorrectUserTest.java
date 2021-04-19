@@ -13,7 +13,7 @@ public class IncorrectUserTest extends BaseTestClass{
     AuthPage authPage = getAuthPage();
 
     @Test
-    void testCreateEmailExist(){
+    void testEmailExist(){
         top.act()
                 .selectSignInButton();
         authPage.act()
@@ -26,6 +26,22 @@ public class IncorrectUserTest extends BaseTestClass{
                 .saveAccount();
         authPage.verify()
                 .emailExistFailed();
+    }
+
+    @Test
+    void testIncorrectEmail() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Tove")
+                .enterLastName("Larsson")
+                .enterEmail("tolvan1")
+                .enterPassword("tolvan1")
+                .agreeToTerms()
+                .saveAccount();
+        authPage.verify()
+                .missingAtEmail();
     }
 
     @Test
