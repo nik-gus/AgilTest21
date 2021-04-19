@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDateTime;
 
-import static com.prestashop.pages.authentication.AuthPage.emailField;
 import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
@@ -59,6 +58,12 @@ public class OrderActController {
         return this;
     }
 
+    public OrderActController payByCheck() {
+        driver.findElement(payByCheckRadioButton())
+                .click();
+        return this;
+    }
+
     public OrderActController agreeToTermsOfService() {
         driver.findElement(agreeToTermsOfServiceCheckBox())
                 .click();
@@ -77,6 +82,12 @@ public class OrderActController {
         return this;
     }
 
+    public OrderActController selectSocialTitleMr() {
+        driver.findElement(socialTitleMr())
+                .click();
+        return this;
+    }
+
     public OrderActController enterFirstName(String firstName) {
         driver.findElement(firstNameField())
                 .sendKeys(firstName);
@@ -91,12 +102,12 @@ public class OrderActController {
 
     public OrderActController enterEmail(String email) {
         driver.findElement(emailField())
-                .sendKeys(generateEmail());
+                .sendKeys(email);
         return this;
     }
 
     public OrderActController enterRandomizedEmail() {
-        driver.findElement(OrderPage.emailField())
+        driver.findElement(emailField())
                 .sendKeys(generateEmail());
         return this;
     }
@@ -107,15 +118,37 @@ public class OrderActController {
         return this;
     }
 
+    public OrderActController continueToAdresses() {
+        driver.findElement(personalInformationContinueButton())
+                .click();
+        return this;
+    }
 
+    public OrderActController selctSignIn() {
+        driver.findElement(signInLink())
+                .click();
+        return this;
+    }
+
+    public OrderActController enterPassword(String password) {
+        driver.findElement(passwordField())
+                .sendKeys(password);
+        return this;
+    }
+
+    public OrderActController signIn() {
+        driver.findElement(personalInformationSignInContinueButton())
+                .click();
+        return this;
+    }
 
     public CommonVerification andThen() {
         return getCommonVerification();
     }
 
 
-    public OrderActController continueToAdresses() {
-        driver.findElement(personalInformationContinueButton())
+    public OrderActController confirmAddress() {
+        driver.findElement(confirmAddressButton())
                 .click();
         return this;
     }
