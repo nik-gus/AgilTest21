@@ -15,7 +15,7 @@ import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.utils.RandomNames.*;
 
-public class CheckOutAndPayTest  extends BaseTestClass {
+class CheckOutAndPayTest  extends BaseTestClass {
 
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();
@@ -51,7 +51,7 @@ public class CheckOutAndPayTest  extends BaseTestClass {
                 .agreeToTermsAndConditions()
                 .continueToAdresses()
                 .enterAddress(generateAddress())
-                .enterPostalCode("123 45") //TODO: hard coded
+                .enterPostalCode("123 45") //TODO: hard coded...
                 .enterCity(generateCity())
                 .continueToShipping()
                 //default shipping
