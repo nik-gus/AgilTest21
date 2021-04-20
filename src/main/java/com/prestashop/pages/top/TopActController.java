@@ -1,5 +1,6 @@
 package com.prestashop.pages.top;
 
+import com.prestashop.pages.authentication.AuthActController;
 import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,5 +44,6 @@ public class TopActController {
     public CommonVerification andThen() {
         return getCommonVerification();
     }
+
 
 }

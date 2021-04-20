@@ -15,8 +15,8 @@ import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
 public class AuthActController {
 
-    private WebDriver driver = getDriver();
-    private WebDriverWait wait = getWebDriverWait();
+    public WebDriver driver = getDriver();
+    public WebDriverWait wait = getWebDriverWait();
 
     public String generateEmail() {
         return LocalDateTime.now().hashCode() + "@test.com";
