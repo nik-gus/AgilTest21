@@ -52,14 +52,23 @@ public class ClothesPage {
     public static By firstArticle() {
         return By.cssSelector("[data-id-product='1']") ;
     }
-    public static By lastArticle(int totalArticles) { return By.cssSelector("[data-id-product='" + totalArticles +"']"); }
+    public static By lastArticle(int totalArticles) {
+        return By.cssSelector("[data-id-product='" + totalArticles +"']");
+    }
+
     public static By addedToCartConfirmationMessage() {
         return By.id("myModalLabel");
     }
 
-    public static By clothingSize(Size size) {return By.cssSelector("#group_1 > option:nth-child(" +size +")"); }
-    public static By clothingColor(Color color) { return By.xpath("//li[2]//label[1]//input[" +color +"]"); }
+    public static By clothingSize(Size size) {
+        return By.cssSelector("#group_1 > option:nth-child(" +size +")");
+    }
+    public static By clothingColor(Color color) {
+        return By.xpath("//li[2]//label[1]//input[" +color +"]");
+    }
 
-    public static By addToCartButton() { return By.cssSelector("[data-button-action='add-to-cart']"); }
+    public static By addToCartButton() {
+        return By.cssSelector("[data-button-action='add-to-cart']");
+    }
 
 }
