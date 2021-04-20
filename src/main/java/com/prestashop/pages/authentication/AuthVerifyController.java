@@ -33,9 +33,27 @@ public class AuthVerifyController {
         return this;
     }
 
+    public AuthVerifyController missingAfterAtEmail() {
+        WebElement alert = driver.findElement(By.name("email"));
+        assertTrue(alert.getAttribute("validationMessage").contains("Please enter a part following '@'."));
+        return this;
+    }
+
+    public AuthVerifyController missingDotEmail() {
+        WebElement alert = driver.findElement(alertMessage());
+        assertEquals("Invalid format.", alert.getText());
+        return this;
+    }
+
     public AuthVerifyController shortPasswordFailed() {
         WebElement alert = driver.findElement(shortPasswordMessage());
         assertEquals("Please match the requested format.", alert.getAttribute("validationMessage"));
+        return this;
+    }
+
+    public AuthVerifyController wrongBirthdayFailed() {
+        WebElement alert = driver.findElement(alertMessage());
+        assertEquals("Format should be 05/31/1970.", alert.getText());
         return this;
     }
 

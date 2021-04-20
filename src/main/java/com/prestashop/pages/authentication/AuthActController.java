@@ -1,6 +1,7 @@
 package com.prestashop.pages.authentication;
 
 import com.prestashop.utils.CommonVerification;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -60,6 +61,12 @@ public class AuthActController {
     public AuthActController enterPassword(String password) {
         driver.findElement((passwordField()))
                 .sendKeys(password);
+        return this;
+    }
+
+    public AuthActController enterBirthday(String birthday) {
+        driver.findElement(By.name("birthday"))
+                .sendKeys(birthday);
         return this;
     }
 

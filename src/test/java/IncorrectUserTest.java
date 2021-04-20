@@ -29,19 +29,51 @@ public class IncorrectUserTest extends BaseTestClass{
     }
 
     @Test
-    void testIncorrectEmail() {
+    void testMissingAtSignInEmail() {
         top.act()
                 .selectSignInButton();
         authPage.act()
                 .selectCreateAccountLink()
                 .enterFirstName("Tove")
                 .enterLastName("Larsson")
-                .enterEmail("tolvan1")
-                .enterPassword("tolvan1")
+                .enterEmail("tolvan1gmail.com")
+                .enterPassword("tolvan1@")
                 .agreeToTerms()
                 .saveAccount();
         authPage.verify()
                 .missingAtEmail();
+    }
+
+    @Test
+    void testMissingTextAfterAtSignInEmail() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Tove")
+                .enterLastName("Larsson")
+                .enterEmail("tolvan1@")
+                .enterPassword("tolvan1")
+                .agreeToTerms()
+                .saveAccount();
+        authPage.verify()
+                .missingAfterAtEmail();
+    }
+
+    @Test
+    void testMissingDotInEmail() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Tove")
+                .enterLastName("Larsson")
+                .enterEmail("tolvan1@test")
+                .enterPassword("tolvan1")
+                .agreeToTerms()
+                .saveAccount();
+        authPage.verify()
+                .missingDotEmail();
     }
 
     @Test
@@ -53,11 +85,28 @@ public class IncorrectUserTest extends BaseTestClass{
                 .enterFirstName("Tove")
                 .enterLastName("Larsson")
                 .enterEmail("tolvan1@mail.com")
-                .enterPassword("tolv")
+                .enterPassword("tol@")
                 .agreeToTerms()
                 .saveAccount();
         authPage.verify()
                 .shortPasswordFailed();
+    }
+
+    @Test
+    void testWrongBirthday(){
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Tove")
+                .enterLastName("Larsson")
+                .enterEmail("tolvan1@mailt.com")
+                .enterPassword("tolv@")
+                .enterBirthday("1997/11/04")
+                .agreeToTerms()
+                .saveAccount();
+        authPage.verify()
+                .wrongBirthdayFailed();
     }
 
     @Test
