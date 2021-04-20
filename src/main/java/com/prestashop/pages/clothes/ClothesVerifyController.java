@@ -15,7 +15,7 @@ public class ClothesVerifyController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
-    public ClothesVerifyController productAddedToShoppingCart() {
+    public ClothesVerifyController successfullyAddedToShoppingCart() {
         WebElement element = driver.findElement(addedToCartConfirmationMessage());
         wait.until(ExpectedConditions.visibilityOf(element));
         assertTrue(element.getText().contains("Product successfully added to your shopping cart"));

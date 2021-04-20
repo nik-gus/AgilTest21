@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>     
     </properties>
 
     <dependencies>
@@ -56,6 +57,11 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.7.0</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.12</version>
         </dependency>
 
     </dependencies>

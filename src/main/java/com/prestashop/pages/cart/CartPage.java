@@ -2,6 +2,9 @@ package com.prestashop.pages.cart;
 
 public class CartPage {
 
+    public static final String PAGE_TITLE_CART =
+            "Cart";
+
     private CartActController act;
     private CartVerifyController verify;
 

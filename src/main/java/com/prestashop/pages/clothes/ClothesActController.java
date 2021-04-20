@@ -47,13 +47,13 @@ public class ClothesActController {
         return this;
     }
 
-    public ClothesActController selectSize(Size size) {
+    public ClothesActController chooseSize(Size size) {
         driver.findElement(clothingSize(size))
                 .click();
         return this;
     }
 
-    public ClothesActController selectColor(Color color) {
+    public ClothesActController chooseColor(Color color) {
         driver.findElement(clothingColor(color))
                 .click();
         return this;
@@ -65,9 +65,10 @@ public class ClothesActController {
         return this;
     }
 
-    public void proceedToCart() {
+    public ClothesActController proceedToCart() {
         driver.findElement(By.xpath("//a[@class='btn btn-primary']"))
                 .click();
+        return this;
     }
 
 
