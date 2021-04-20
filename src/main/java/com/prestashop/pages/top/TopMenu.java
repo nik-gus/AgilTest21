@@ -28,16 +28,19 @@ public class TopMenu {
         return verify;
     }
 
-    public static By userAccount() { return By.cssSelector("#_desktop_user_info > div > a.account > span"); }
-    public static By contactUsLink() { return  By.id("contact-link"); }
-    public static By homeLink() { return By.cssSelector("#_desktop_logo > h1 > a > img"); }
-    public static By clothesLink() { return By.id("category-3"); }
+    public static By userAccount(){
+        return By.cssSelector("#_desktop_user_info > div > a.account > span");
+    }
 
-
-
-
-
-
+    public static By contactUsLink(){
+        return  By.id("contact-link");
+    }
+    public static By homeLink() {
+        return By.cssSelector("#_desktop_logo > h1 > a > img");
+    }
+    public static By clothesLink() {
+        return By.id("category-3");
+    }
 
 }
 
