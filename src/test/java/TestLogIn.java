@@ -28,5 +28,5 @@ public class TestLogIn extends BaseTestClass {
     }
 
 
-    }
+}
 
