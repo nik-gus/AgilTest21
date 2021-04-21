@@ -1,4 +1,3 @@
-
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
@@ -66,7 +65,7 @@ CartPage cart = getCartPage();
                 .authenticationFailed();
     }
 
-//    @Disabled
+    //@Disabled
     @Test
     void testPlaceOrder() {
         top.act()
@@ -84,9 +83,9 @@ CartPage cart = getCartPage();
         cart.act()
                 .proceedToCheckout();
         order.act()
-//                .enterAddress("testadress")
-//                .enterPostalCode("123 45")
-//                .enterCity("sthlm")
+                //.enterAddress("testadress")
+                //.enterPostalCode("123 45")
+                //.enterCity("sthlm")
                 .continueToShipping()
                 .continueToPayment()
                 .payByBankWire()
@@ -107,12 +106,4 @@ CartPage cart = getCartPage();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
     }
-
-
-
-
-
-
-
-
 } // end class
