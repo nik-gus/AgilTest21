@@ -31,10 +31,10 @@ public class BaseTestClass {
         driver.get("http://40.76.27.113:8085/en/");
     }
 
-   /* @AfterEach
+    @AfterEach
     public void cleanUp() {
         driver.get("http://40.76.27.113:8085/en/?mylogout=");
-    }*/
+    }
 
     @AfterAll
     public static void tearDown() {
