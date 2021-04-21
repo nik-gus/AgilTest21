@@ -101,19 +101,19 @@ public class OrderActController {
     }
 
     public OrderActController enterEmail(String email) {
-        driver.findElement(emailField())
+        driver.findElement(emailFieldSignIn())
                 .sendKeys(email);
         return this;
     }
 
     public OrderActController enterRandomizedEmail() {
-        driver.findElement(emailField())
+    driver.findElement(emailField())
                 .sendKeys(generateEmail());
         return this;
     }
 
     public OrderActController agreeToTermsAndConditions() {
-        driver.findElement(agreeToTermsAndConditionsCheckBox())
+        driver.findElement(personalInformationAgreeToTerms())
                 .click();
         return this;
     }

@@ -24,5 +24,4 @@ public class RandomNames {
         return faker.address().city();
     }
 
-
 }

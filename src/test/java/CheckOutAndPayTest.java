@@ -1,18 +1,18 @@
-import com.github.javafaker.Faker;
+import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
 import com.prestashop.pages.clothes.Size;
 import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import com.prestashop.utils.Color;
-import com.prestashop.utils.RandomNames;
 import org.junit.jupiter.api.Test;
 
-import static com.prestashop.pages.authentication.AuthPage.TEST_USER_EMAIL;
-import static com.prestashop.pages.authentication.AuthPage.TEST_USER_PASSWORD;
+import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.cart.CartPage.PAGE_TITLE_CART;
 import static com.prestashop.pages.cart.CartPage.getCartPage;
 import static com.prestashop.pages.clothes.ClothesPage.*;
+import static com.prestashop.pages.clothes.Size.EXTRA_LARGE;
+import static com.prestashop.pages.clothes.Size.LARGE;
 import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.utils.RandomNames.*;
@@ -23,6 +23,7 @@ class CheckOutAndPayTest  extends BaseTestClass {
     ClothesPage clothes = getClothesPage();
     CartPage cart = getCartPage();
     OrderPage order = getOrderPage();
+    AuthPage authPage = getAuthPage();
 
     @Test
     void testBuyAsGuest() {
@@ -68,14 +69,14 @@ class CheckOutAndPayTest  extends BaseTestClass {
     }
 
     @Test
-    void testBuyAsRegistredUserNotLoggedIn() {
+    void testBuyAsRegisteredUserNotLoggedIn() {
         top.act()
                 .selectClothes()
                     .andThen()
                 .verifyPageTitle(PAGE_TITLE_CLOTHES);
         clothes.act()
                 .selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_SWEATER)
-                .chooseSize(Size.LARGE)
+                .chooseSize(LARGE)
                 .addToCart();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
@@ -99,10 +100,33 @@ class CheckOutAndPayTest  extends BaseTestClass {
                 .placeOrder();
         order.verify()
                 .orderConfirmed();
+    }
 
-
-
-
+    @Test
+    void testBuyAsRegisteredUserLoggedIn() {
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .enterEmail(TEST_USER_EMAIL)
+                .enterPassword(TEST_USER_PASSWORD)
+                .signIn();
+        top.act()
+                .selectClothes();
+        clothes.act()
+                .selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_SWEATER)
+                .chooseSize(EXTRA_LARGE)
+                .addToCart()
+                .proceedToCart();
+        cart.act()
+                .proceedToCheckout();
+        order.act()
+                .confirmAddress()
+                .continueToPayment()
+                .payByBankWire()
+                .agreeToTermsOfService()
+                .placeOrder();
+        order.verify()
+                .orderConfirmed();
 
 
 
