@@ -5,21 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.LocalDateTime;
-
 import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
+import static com.prestashop.utils.TestDataGenerator.generateEmail;
 
 public class OrderActController {
 
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
-
-    public String generateEmail() {
-        return LocalDateTime.now().hashCode() + "@test.com";
-    }
 
     public OrderActController enterAddress(String address) {
         driver.findElement(addressTextField())

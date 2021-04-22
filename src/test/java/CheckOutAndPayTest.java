@@ -15,7 +15,7 @@ import static com.prestashop.pages.clothes.Size.EXTRA_LARGE;
 import static com.prestashop.pages.clothes.Size.LARGE;
 import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
-import static com.prestashop.utils.RandomNames.*;
+import static com.prestashop.utils.TestDataGenerator.*;
 
 class CheckOutAndPayTest  extends BaseTestClass {
 
