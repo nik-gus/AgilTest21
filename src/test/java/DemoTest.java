@@ -15,7 +15,7 @@ import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 
 class DemoTest extends BaseTestClass {
-
+/*
 TopMenu top = getTopMenu();
 AuthPage authPage = getAuthPage();
 OrderPage order = getOrderPage();
@@ -105,5 +105,5 @@ CartPage cart = getCartPage();
                 .addToCart();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
-    }
+    }*/
 } // end class

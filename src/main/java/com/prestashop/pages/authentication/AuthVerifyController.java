@@ -57,6 +57,28 @@ public class AuthVerifyController {
         return this;
     }
 
+    public AuthVerifyController EmptyFieldFailed() {
+        WebElement alert = null;
+        String firstname = driver.findElement(By.name("firstname")).getAttribute("value");
+        String lastname = driver.findElement(By.name("lastname")).getAttribute("value");
+        String email = driver.findElement(By.name("email")).getAttribute("value");
+        String password = driver.findElement(By.name("password")).getAttribute("value");
+        if(firstname.isEmpty()){
+            alert = driver.findElement(By.name("firstname"));
+        }
+        if(lastname.isEmpty()){
+            alert = driver.findElement(By.name("lastname"));
+        }
+        if(email.isEmpty()){
+            alert = driver.findElement(By.name("email"));
+        }
+        if(password.isEmpty()){
+            alert = driver.findElement(By.name("password"));
+        }
+        assertEquals("Please fill out this field.", alert.getAttribute("validationMessage"));
+        return this;
+    }
+
     public AuthVerifyController notAgreeFailed() {
         WebElement alert = driver.findElement(notAgreeMessage());
         assertEquals("Please check this box if you want to proceed.", alert.getAttribute("validationMessage"));

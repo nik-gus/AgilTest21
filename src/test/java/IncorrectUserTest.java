@@ -13,6 +13,22 @@ public class IncorrectUserTest extends BaseTestClass{
     AuthPage authPage = getAuthPage();
 
     @Test
+    void testEmptyField(){
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Tove")
+                .enterLastName("Månsson")
+                .enterEmail("")
+                .enterPassword("")
+                .agreeToTerms()
+                .saveAccount();
+        authPage.verify()
+                .EmptyFieldFailed();
+    }
+
+    @Test
     void testEmailExist(){
         top.act()
                 .selectSignInButton();
