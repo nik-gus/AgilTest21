@@ -40,10 +40,10 @@ public class CheckOutAndPaySteps {
         driver.get("http://40.76.27.113:8085/en/");
     }
 
-//    @After
-//    public void cleanUp() {
-//        driver.get("http://40.76.27.113:8085/en/?mylogout=");
-//    }
+    @After
+    public void cleanUp() {
+        driver.get("http://40.76.27.113:8085/en/?mylogout=");
+    }
 
     @Given("Guest user is on order page")
     public void guestUserIsOnOrderPage() {
@@ -52,9 +52,6 @@ public class CheckOutAndPaySteps {
         clothes.act()
                 .selectFirstArticleOfClothing()
                 .addToCart()
-//        clothes.verify()
-//                .successfullyAddedToShoppingCart();
-//        clothes.act()
                 .proceedToCart();
         cart.act()
                 .proceedToCheckout()
