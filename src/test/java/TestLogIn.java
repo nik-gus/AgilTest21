@@ -1,5 +1,3 @@
-
-import com.prestashop.pages.authentication.AuthActController;
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;

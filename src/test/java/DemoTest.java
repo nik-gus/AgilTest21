@@ -65,7 +65,7 @@ CartPage cart = getCartPage();
                 .authenticationFailed();
     }
 
-    //@Disabled
+    @Disabled
     @Test
     void testPlaceOrder() {
         top.act()
