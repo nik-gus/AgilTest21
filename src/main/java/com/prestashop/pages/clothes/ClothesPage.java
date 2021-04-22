@@ -67,6 +67,7 @@ public class ClothesPage {
         return By.xpath("//li[2]//label[1]//input[" +color +"]");
     }
 
+    public static By proceedToCartInPopupButton(){ return By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"); }
     public static By addToCartButton() {
         return By.cssSelector("[data-button-action='add-to-cart']");
     }

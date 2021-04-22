@@ -4,6 +4,7 @@ import com.prestashop.utils.Color;
 import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.clothes.ClothesPage.*;
@@ -66,7 +67,7 @@ public class ClothesActController {
     }
 
     public ClothesActController proceedToCart() {
-        driver.findElement(By.xpath("//a[@class='btn btn-primary']"))
+        wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCartInPopupButton()))
                 .click();
         return this;
     }
