@@ -33,7 +33,11 @@ public class AuthActController {
                 .click();
         return this;
     }
-
+    public AuthActController selectSocialTitleMrs() {
+        driver.findElement(socialTitleMrs())
+                .click();
+        return this;
+    }
     public AuthActController enterFirstName(String firstName) {
         driver.findElement(firstNameField())
                 .sendKeys(firstName);
@@ -67,6 +71,16 @@ public class AuthActController {
     public AuthActController enterBirthday(String birthday) {
         driver.findElement(By.name("birthday"))
                 .sendKeys(birthday);
+        return this;
+    }
+    public AuthActController selectReceiveOffers() {
+        driver.findElement(receiveOffersCheckbox())
+                .click();
+        return this;
+    }
+    public AuthActController subscribeToNewsletter() {
+        driver.findElement(subscribeToNewsletterCheckbox())
+                .click();
         return this;
     }
 
