@@ -95,14 +95,20 @@ public class OrderActController {
         return this;
     }
 
-    public OrderActController enterEmail(String email) {
-        driver.findElement(emailFieldSignIn())
+    public OrderActController enterEmailSignIn(String email) {
+        wait.until(ExpectedConditions.elementToBeClickable(emailFieldSignIn()))
+                .sendKeys(email);
+        return this;
+    }
+
+    public OrderActController enterEmailOrderAsGuest(String email) {
+        driver.findElement(emailFieldOrderAsGuest())
                 .sendKeys(email);
         return this;
     }
 
     public OrderActController enterRandomizedEmail() {
-    driver.findElement(emailField())
+    driver.findElement(emailFieldOrderAsGuest())
                 .sendKeys(generateEmail());
         return this;
     }

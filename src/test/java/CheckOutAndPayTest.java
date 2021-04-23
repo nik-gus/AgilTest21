@@ -90,7 +90,7 @@ class CheckOutAndPayTest  extends BaseTestClass {
                 .verifyUrlPath(URL_PATH_ORDER);
         order.act()
                 .selctSignIn()
-                .enterEmail(TEST_USER_EMAIL)
+                .enterEmailSignIn(TEST_USER_EMAIL)
                 .enterPassword(TEST_USER_PASSWORD)
                 .signIn()
                 .confirmAddress()

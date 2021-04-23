@@ -1,5 +1,6 @@
 package com.prestashop.pages.order;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,6 +21,10 @@ public class OrderVerifyController {
         return this;
     }
 
-
+    public OrderVerifyController missingAtEmail() {
+        WebElement alert = driver.findElement(By.name("email"));
+        assertTrue(alert.getAttribute("validationMessage").contains("Please include an '@' in the email address."));
+        return this;
+    }
 
 }

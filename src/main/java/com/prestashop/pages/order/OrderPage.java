@@ -55,8 +55,9 @@ public class OrderPage {
     public static By socialTitleMrs() { return By.xpath("//*[@id='customer-form']/section/div[1]/div[1]/label[2]/span/input"); }
     public static By firstNameField() { return By.name("firstname"); }
     public static By lastNameField() { return By.name("lastname"); }
-    public static By emailField() { return By.cssSelector("#customer-form > section > div:nth-child(4) > div.col-md-6 > input"); }
+    public static By emailFieldOrderAsGuest() { return By.cssSelector("#customer-form > section > div:nth-child(4) > div.col-md-6 > input"); }
     public static By emailFieldSignIn() { return By.cssSelector("#login-form > section > div:nth-child(2) > div.col-md-6 > input"); }
+
     //public static By passwordField() { return By.name("password"); }
     public static By passwordField() { return By.cssSelector("#login-form > section > div:nth-child(3) > div.col-md-6 > div > input[name='password']"); }
     public static By agreeToTermsAndConditionsCheckBox() { return By.name("conditions_to_approve[terms-and-conditions]"); }
