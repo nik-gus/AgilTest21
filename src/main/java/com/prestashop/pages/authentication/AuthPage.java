@@ -46,6 +46,8 @@ public class AuthPage {
     public static By lastNameField() { return By.name("lastname"); }
     public static By emailField() { return By.name("email"); }
     public static By passwordField() { return By.name("password"); }
+    public static By receiveOffersCheckbox(){ return By.name("optin");}
+    public static By subscribeToNewsletterCheckbox(){ return By.name("newsletter");}
     public static By agreeToTermsCheckBox() { return By.name("psgdpr"); }
     public static By submitButton() { return By.cssSelector("[data-link-action='save-customer']"); }
 
