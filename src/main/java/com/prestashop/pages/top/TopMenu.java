@@ -41,6 +41,10 @@ public class TopMenu {
     public static By clothesLink() {
         return By.id("category-3");
     }
+    public static By accessoriesLink() {
+        return By.id("category-6");
+    }
+
 
 }
 

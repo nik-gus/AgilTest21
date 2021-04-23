@@ -49,6 +49,11 @@ public class CommonVerification {
         return this;
     }
 
+    public CommonVerification verifyAccessoriesPage(String title) {
+        assertTrue(wait.until(ExpectedConditions.titleIs(title)),
+                "ERROR: Page title should be '" +title +"'");
+        return this;
+    }
 
 
 

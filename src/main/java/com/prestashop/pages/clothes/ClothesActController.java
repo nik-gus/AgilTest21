@@ -11,6 +11,7 @@ import static com.prestashop.pages.clothes.ClothesPage.*;
 import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ClothesActController {
 
@@ -23,14 +24,51 @@ public class ClothesActController {
         return this;
     }
 
+
+    public ClothesActController ClickLowToHigh() {
+        driver.findElement(By.partialLinkText("Price, low to high"))
+                .click();
+        return this;
+    }
+
+    public ClothesActController ClickHighToLow() {
+        driver.findElement(By.partialLinkText("Price, high to low"))
+                .click();
+        return this;
+    }
+
+    public ClothesActController ClickNameAToZ() {
+        driver.findElement(By.partialLinkText("Name, A to Z"))
+                .click();
+        return this;
+    }
+
+    public ClothesActController ClickNameZToA() {
+        driver.findElement(By.partialLinkText("Name, Z to A"))
+                .click();
+        return this;
+    }
+
     public ClothesActController filterSize(Size size) {
-        driver.findElement(By.xpath("//a[@class='_gray-darker search-link js-search-link'][contains(text(),'" +size +"')]"))
+        driver.findElement(By.xpath("//a[@class='_gray-darker search-link js-search-link'][contains(text(),'" + size + "')]"))
+                .click();
+        return this;
+    }
+
+    public ClothesActController ClickRelevenceButton() {
+        driver.findElement(By.className("products-sort-order"))
+                .click();
+        return this;
+    }
+
+    public ClothesActController ClickMen() {
+        driver.findElement(By.id("category-4"))
                 .click();
         return this;
     }
 
     public ClothesActController selectArticleOfClothingByName(String name) {
-        driver.findElement(By.cssSelector("img[alt='" + name +"']"))
+        driver.findElement(By.cssSelector("img[alt='" + name + "']"))
                 .click();
         return this;
     }
@@ -71,6 +109,7 @@ public class ClothesActController {
                 .click();
         return this;
     }
+
 
 
     public CommonVerification andThen() {
