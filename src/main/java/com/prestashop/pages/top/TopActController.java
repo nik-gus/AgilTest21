@@ -40,6 +40,11 @@ public class TopActController {
                 .click();
         return this;
     }
+    public TopActController selectAccessories() {
+        driver.findElement(accessoriesLink())
+                .click();
+        return this;
+    }
 
     public CommonVerification andThen() {
         return getCommonVerification();
