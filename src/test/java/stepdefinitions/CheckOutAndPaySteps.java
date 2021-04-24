@@ -22,6 +22,12 @@ import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 import static com.prestashop.utils.TestDataGenerator.generateFirstName;
 import static com.prestashop.utils.TestDataGenerator.generateLastName;
 
+/**
+ * Denna mappar mot EPIC AG-9, Checkout And Pay.
+ * Tanken är att den ska kan innehålla testfall för både
+ * Story AG-11 (Correct Checkout And Pay) och AG-16 (Incorrect Checkout And Pay)
+ * då dessa hamnar under samma Feature i Cucumber.
+ */
 public class CheckOutAndPaySteps {
 
     public static WebDriver driver;
