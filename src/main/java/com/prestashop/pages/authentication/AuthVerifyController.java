@@ -47,7 +47,7 @@ public class AuthVerifyController {
 
     public AuthVerifyController shortPasswordFailed() {
         WebElement alert = driver.findElement(shortPasswordMessage());
-        assertEquals("Please match the format requested.", alert.getAttribute("validationMessage"));
+        assertFalse(alert.getAttribute("validationMessage").isEmpty());
         return this;
     }
 
@@ -75,13 +75,13 @@ public class AuthVerifyController {
         if(password.isEmpty()){
             alert = driver.findElement(By.name("password"));
         }
-        assertEquals("Please fill in this field.", alert.getAttribute("validationMessage"));
+        assertFalse(alert.getAttribute("validationMessage").isEmpty());
         return this;
     }
 
     public AuthVerifyController notAgreeFailed() {
         WebElement alert = driver.findElement(notAgreeMessage());
-        assertEquals("Please tick this box if you want to proceed.", alert.getAttribute("validationMessage"));
+        assertFalse(alert.getAttribute("validationMessage").isEmpty());
         return this;
     }
 
