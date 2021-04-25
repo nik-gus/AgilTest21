@@ -24,6 +24,12 @@ public class ClothesActController {
         return this;
     }
 
+    public ClothesActController selectWomen() {
+        driver.findElement(By.partialLinkText("Women"))
+                .click();
+        return this;
+    }
+
 
     public ClothesActController ClickLowToHigh() {
         driver.findElement(By.partialLinkText("Price, low to high"))

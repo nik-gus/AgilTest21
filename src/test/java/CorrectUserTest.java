@@ -7,7 +7,7 @@ public class CorrectUserTest extends BaseTestClass {
     AuthPage authPage = AuthPage.getAuthPage();
 
     @Test
-    void testCreateCorrectUser() {
+    void testFillAllFieldsInTheForm() {
         top.act()
                 .selectSignInButton();
         authPage.act()
@@ -25,6 +25,28 @@ public class CorrectUserTest extends BaseTestClass {
         top.verify()
                 .userLoggedIn("Test Tester");
     }
+
+    @Test
+    void testLeaveAllOptionalFieldsEmpty(){
+        top.act()
+                .selectSignInButton();
+        authPage.act()
+                .selectCreateAccountLink()
+                .enterFirstName("Test")
+                .enterLastName("Testsson")
+                .enterRandomizedEmail()
+                .enterPassword("Password1")
+                .enterBirthday("")
+                .agreeToTerms()
+                .saveAccount();
+        top.verify()
+                .userLoggedIn("Test Testsson");
+
+
+    }
+
+
+
 
 
 

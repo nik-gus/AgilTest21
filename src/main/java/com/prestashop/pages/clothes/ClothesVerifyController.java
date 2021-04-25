@@ -57,4 +57,12 @@ public class ClothesVerifyController {
         return this;
 
     }
+
+    public ClothesVerifyController verifySearchResults(){
+        driver.findElement(By.className("h2"));
+        assertEquals("Search results","Search results");
+        return this;
+
+    }
+
 }

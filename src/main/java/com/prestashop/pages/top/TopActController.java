@@ -45,6 +45,11 @@ public class TopActController {
                 .click();
         return this;
     }
+    public TopActController searchForSomething() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Hummingbird");
+        return this;
+    }
+
 
     public CommonVerification andThen() {
         return getCommonVerification();

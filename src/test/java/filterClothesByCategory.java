@@ -24,7 +24,7 @@ public class filterClothesByCategory extends BaseTestClass {
         top.act()
                 .selectClothes();
         clothes.act()
-                .SelectWomen();
+                .selectWomen();
     }
     @Test
     @Description("As a User i would like to test Filter option in Clothes, so that I can filter Men by Category")

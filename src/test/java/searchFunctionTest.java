@@ -21,7 +21,8 @@ public class searchFunctionTest extends BaseTestClass {
     @Description("As a User i would like to test search for Hummingbird, to check so that i can find all Humingbird")
     void searchForSomething() {
         top.act()
-                .searchForSomething()
-                .verifySearchTitle();
+                .searchForSomething();
+        clothes.verify()
+                .verifySearchResults();
     }
 }
