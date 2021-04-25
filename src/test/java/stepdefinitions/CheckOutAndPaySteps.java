@@ -77,6 +77,6 @@ public class CheckOutAndPaySteps {
     @Then("Error message should be displayed")
     public void errorMessageShouldBeDisplayed() {
         order.verify()
-                .missingAtEmail();
+                .emailRejected();
     }
 }

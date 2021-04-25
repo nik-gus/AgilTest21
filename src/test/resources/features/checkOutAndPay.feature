@@ -4,3 +4,5 @@ Feature: Check Out And Pay
     Given Guest user is on order page
     When User inputs invalid email address
     Then Error message should be displayed
+
+#    Examples of invalid email addresses?

@@ -21,9 +21,9 @@ public class OrderVerifyController {
         return this;
     }
 
-    public OrderVerifyController missingAtEmail() {
+    public OrderVerifyController emailRejected() {
         WebElement alert = driver.findElement(By.name("email"));
-        assertTrue(alert.getAttribute("validationMessage").contains("Please include an '@' in the email address."));
+        assertTrue(alert.getAttribute("validationMessage").contains("Please"));
         return this;
     }
 

@@ -69,7 +69,8 @@ public class ClothesPage {
 
     public static By proceedToCartInPopupButton(){ return By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"); }
     public static By addToCartButton() {
-        return By.cssSelector("[data-button-action='add-to-cart']");
+        //return By.cssSelector("button[data-button-action='add-to-cart']");
+        return By.cssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add > button");
     }
 
 }
