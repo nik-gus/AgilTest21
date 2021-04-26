@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class TestNoCorrectLogIn extends BaseTestClass {
+class TestNoCorrectLogIn extends BaseTestClass {
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
     public Label alert;
@@ -28,10 +28,6 @@ public class TestNoCorrectLogIn extends BaseTestClass {
         authPage.verify()
                 .authenticationFailed();
     }
-  
-       
-
-
-   }
+}
 
 

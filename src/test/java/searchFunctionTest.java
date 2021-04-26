@@ -10,7 +10,7 @@ import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class searchFunctionTest extends BaseTestClass {
+class searchFunctionTest extends BaseTestClass {
 
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();

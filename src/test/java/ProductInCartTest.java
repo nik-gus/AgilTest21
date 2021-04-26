@@ -14,7 +14,7 @@ import static com.prestashop.pages.clothes.Size.MEDIUM;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class ProductInCartTest extends BaseTestClass {
+class ProductInCartTest extends BaseTestClass {
 
     TopMenu top = getTopMenu();
     OrderPage order = getOrderPage();

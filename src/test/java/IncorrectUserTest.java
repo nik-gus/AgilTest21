@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class IncorrectUserTest extends BaseTestClass{
+class IncorrectUserTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
 
