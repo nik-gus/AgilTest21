@@ -33,32 +33,38 @@ public class DriverFactory {
 
         String driverProperty = System.getProperty("WebDriver");
 
-        if (driverProperty == null)  {
-            driver = new ChromeDriver(); //HÄR BEHÖVS System Set property etc
-            return driver;
-        }
-
-            switch (driverProperty) {
-                case "Chrome":
-                    if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
-                        System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
-                    } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
-                        System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
-                    }
-                    driver = new ChromeDriver();
-                    return driver;
-                case "Firefox":
-                    if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
-                        System.setProperty(GECKO_PROPERTY, GECKO_MAC_PATH_FILE);
-                    } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
-                        System.setProperty(GECKO_PROPERTY, GECKO_WIN_PATH_FILE);
-                    }
-                    driver = new FirefoxDriver();
-                    return driver;
-                default:
-                    throw new IllegalArgumentException("No '" + driver + "' driver available.");
+        if (driverProperty == null) {
+            if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
+                System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
+            } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
+                System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
             }
+                driver = new ChromeDriver();
+                return driver;
+            }
+
+
+        switch (driverProperty) {
+            case "Chrome":
+                if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
+                    System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
+                } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
+                    System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
+                }
+                driver = new ChromeDriver();
+                return driver;
+            case "Firefox":
+                if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
+                    System.setProperty(GECKO_PROPERTY, GECKO_MAC_PATH_FILE);
+                } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
+                    System.setProperty(GECKO_PROPERTY, GECKO_WIN_PATH_FILE);
+                }
+                driver = new FirefoxDriver();
+                return driver;
+            default:
+                throw new IllegalArgumentException("No '" + driver + "' driver available.");
         }
+    }
 
     public static WebDriverWait getWebDriverWait() {
         if (wait == null) {
