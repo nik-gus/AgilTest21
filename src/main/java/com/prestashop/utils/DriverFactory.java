@@ -6,10 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DriverFactory {
-
-    private static WebDriver driver;
-    private static WebDriverWait wait;
-
     private static final String MAC = "mac";
     private static final String WIN = "win";
 
@@ -22,47 +18,43 @@ public class DriverFactory {
     private static final String GECKO_WIN_PATH_FILE = "src/main/driverStore/geckodriver_win.exe";
     private static final String CHROME_WIN_PATH_FILE = "src/main/driverStore/chromedriver_win.exe";
 
+    private static WebDriver driver;
+    private static WebDriverWait wait;
+    private static String driverProperty;
+
+
     private DriverFactory() {
         //prevent instantiation
     }
 
     public static WebDriver getDriver() {
+        // use current driver instance, if there is one
         if (driver != null) {
             return driver;
         }
 
-        String driverProperty = System.getProperty("WebDriver");
+        driverProperty = System.getProperty("WebDriver");
 
+        // if no driver parameter is set, create default driver (Chrome)
         if (driverProperty == null) {
-            if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
-                System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
-            } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
-                System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
-            }
-                driver = new ChromeDriver();
-                return driver;
-            }
+           setSystemPropertyForChrome();
+            driver = new ChromeDriver();
+            return driver;
+        }
 
-
+        // if driver parameter is set (i.e. -DWebDriver=xxxx is used)
         switch (driverProperty) {
-            case "Chrome":
-                if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
-                    System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
-                } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
-                    System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
-                }
+            case "Chrome" -> {
+                setSystemPropertyForChrome();
                 driver = new ChromeDriver();
                 return driver;
-            case "Firefox":
-                if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
-                    System.setProperty(GECKO_PROPERTY, GECKO_MAC_PATH_FILE);
-                } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
-                    System.setProperty(GECKO_PROPERTY, GECKO_WIN_PATH_FILE);
-                }
+            }
+            case "Firefox" -> {
+                setSystemPropertyForFirefox();
                 driver = new FirefoxDriver();
                 return driver;
-            default:
-                throw new IllegalArgumentException("No '" + driver + "' driver available.");
+            }
+            default -> throw new IllegalArgumentException("No '" + driver + "' driver available.");
         }
     }
 
@@ -72,5 +64,26 @@ public class DriverFactory {
         }
         return wait;
     }
+
+    private static void setSystemPropertyForChrome() {
+        if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
+            System.setProperty(CHROME_PROPERTY, CHROME_MAC_PATH_FILE);
+        } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
+            System.setProperty(CHROME_PROPERTY, CHROME_WIN_PATH_FILE);
+        }
+    }
+
+    private static void setSystemPropertyForFirefox() {
+        if (System.getProperty("os.name").toLowerCase().contains(MAC)) {
+            System.setProperty(GECKO_PROPERTY, GECKO_MAC_PATH_FILE);
+        } else if (System.getProperty("os.name").toLowerCase().contains(WIN)) {
+            System.setProperty(GECKO_PROPERTY, GECKO_WIN_PATH_FILE);
+        }
+    }
+
+
+
+
+
 
 }
