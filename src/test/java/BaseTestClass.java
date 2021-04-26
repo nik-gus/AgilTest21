@@ -18,8 +18,8 @@ public class BaseTestClass {
     @BeforeAll
     public static void setup() {
         driver = getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = getWebDriverWait();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @BeforeEach

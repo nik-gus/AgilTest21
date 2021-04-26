@@ -31,7 +31,6 @@ public class CartActController {
         return this;
     }
 
-
     public CommonVerification andThen() {
         return getCommonVerification();
     }
