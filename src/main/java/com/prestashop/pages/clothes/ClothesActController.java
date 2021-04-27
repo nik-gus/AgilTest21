@@ -123,8 +123,6 @@ public class ClothesActController {
         return this;
     }
 
-
-
     public CommonVerification andThen() {
         return getCommonVerification();
     }

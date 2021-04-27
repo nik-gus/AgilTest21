@@ -34,9 +34,9 @@ class ProductInCartTest extends BaseTestClass {
 
         //Closing the checkoutpage
         cart.act().ContinueShopping();
-
         //Going to the cart
-        clothes.act().proceedToCart();
+        top.act()
+                .selectCart();
 
         //Empty the cart
         cart.act().RemoveThingInCart();

@@ -44,6 +44,7 @@ public class TopMenu {
     public static By accessoriesLink() {
         return By.id("category-6");
     }
+    public static By cartLink() { return By.cssSelector("#_desktop_cart > div > div > a"); }
 
 
 }

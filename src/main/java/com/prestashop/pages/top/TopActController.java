@@ -1,9 +1,10 @@
 package com.prestashop.pages.top;
 
-import com.prestashop.pages.authentication.AuthActController;
 import com.prestashop.utils.CommonVerification;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.top.TopMenu.*;
@@ -45,6 +46,15 @@ public class TopActController {
                 .click();
         return this;
     }
+
+    public TopActController selectCart() {
+        WebElement cartButton = driver.findElement(cartLink());
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", cartButton);
+        return this;
+    }
+
+
     public TopActController searchForSomething() {
         driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Hummingbird");
         return this;
