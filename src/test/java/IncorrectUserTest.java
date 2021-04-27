@@ -139,4 +139,5 @@ class IncorrectUserTest extends BaseTestClass{
         authPage.verify()
                 .notAgreeFailed();
     }
+
 }

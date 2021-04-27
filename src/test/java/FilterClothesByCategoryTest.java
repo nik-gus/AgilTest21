@@ -10,7 +10,7 @@ import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-class filterClothesByCategory extends BaseTestClass {
+class FilterClothesByCategoryTest extends BaseTestClass {
 
 
     TopMenu top = getTopMenu();

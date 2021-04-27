@@ -13,7 +13,7 @@ import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-class sortAccessories  extends BaseTestClass {
+class SortClothesTest extends BaseTestClass {
 
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();

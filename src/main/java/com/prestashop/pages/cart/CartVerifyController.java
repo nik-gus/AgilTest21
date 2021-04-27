@@ -13,7 +13,7 @@ public class CartVerifyController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
-    public CartVerifyController CheckThatCartIsEmpty(){
+    public CartVerifyController checkThatCartIsEmpty(){
         assertEquals("There are no more items in your cart",driver.findElement(By.xpath("/html/body/main/section/div/div/section/div/div[1]/div/div[2]/span")).getText());
         return this;
     }

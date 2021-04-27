@@ -20,13 +20,13 @@ public class CartActController {
         return this;
     }
 
-    public CartActController ContinueShopping(){
+    public CartActController continueShopping(){
         driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/button/span/i"))
                 .click();
         return this;
     }
 
-    public CartActController RemoveThingInCart(){
+    public CartActController removeThingInCart(){
         driver.findElement(By.xpath("/html/body/main/section/div/div/section/div/div[1]/div/div[2]/ul/li/div/div[3]/div/div[3]")).click();
         return this;
     }

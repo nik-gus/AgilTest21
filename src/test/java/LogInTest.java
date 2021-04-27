@@ -6,7 +6,7 @@ import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 
-class TestLogIn extends BaseTestClass {
+class LogInTest extends BaseTestClass {
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
 
@@ -24,7 +24,6 @@ class TestLogIn extends BaseTestClass {
         top.verify()
                 .userLoggedIn("tolvan tolvansson");
     }
-
 
 }
 
