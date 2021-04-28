@@ -1,9 +1,5 @@
 package com.prestashop.pages.user;
 
-import com.prestashop.pages.user.UserActController;
-import com.prestashop.pages.user.UserPage;
-import com.prestashop.pages.user.UserVerifyController;
-
 public class UserPage {
     private UserActController act;
     private UserVerifyController verify;
@@ -21,5 +17,7 @@ public class UserPage {
 
     public UserActController act() { return act; }
     public UserVerifyController verify() { return verify; }
+
+
 
 }
