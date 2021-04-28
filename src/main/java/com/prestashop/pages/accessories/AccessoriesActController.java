@@ -3,10 +3,12 @@ package com.prestashop.pages.accessories;
 import com.prestashop.pages.clothes.ClothesActController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccessoriesActController {
 
@@ -17,14 +19,18 @@ public class AccessoriesActController {
     public AccessoriesActController ClickLowToHigh() {
         driver.findElement(By.partialLinkText("Price, low to high"))
                 .click();
+
         return this;
     }
 
     public AccessoriesActController ClickHighToLow() {
         driver.findElement(By.partialLinkText("Price, high to low"))
                 .click();
+
         return this;
     }
+
+
     public AccessoriesActController ClickNameAToZ() {
         driver.findElement(By.partialLinkText("Name, A to Z"))
                 .click();

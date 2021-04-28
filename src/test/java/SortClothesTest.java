@@ -46,7 +46,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen("Men");
+                .verifyMen();
         clothes.act()
                 .ClickRelevenceButton()
                 .ClickLowToHigh();
@@ -66,7 +66,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen("Men");
+                .verifyMen();
         clothes.act()
                 .ClickRelevenceButton()
                 .ClickHighToLow();
@@ -85,7 +85,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen("Men");
+                .verifyMen();
         clothes.act()
                 .ClickRelevenceButton()
                 .ClickNameAToZ();
@@ -104,73 +104,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen("Men");
-        clothes.act()
-                .ClickRelevenceButton()
-                .ClickNameZToA();
-        clothes.verify()
-                .verifyZTOA();
-
-
-    }
-    @Test
-    @Description("As a User i would like to test Sort option, so that accessories are sorted by price low to high")
-
-    void testSortAccessoriesLowToHigh() {
-        top.act()
-                .selectAccessories()
-                .andThen()
-                .verifyAccessoriesPage("Accessories");
-        clothes.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
-        clothes.verify()
-                .verifyLowToHigh();
-
-
-    }
-
-    @Test
-    @Description("As a User i would like to test Sort option, so that accessories are sorted by price high to low")
-
-    void testSortAccessoriesHighToLow() {
-        top.act()
-                .selectAccessories()
-                .andThen()
-                .verifyAccessoriesPage("Accessories");
-        clothes.act()
-                .ClickRelevenceButton()
-                .ClickHighToLow();
-        clothes.verify()
-                .verifyHighToLow();
-
-    }
-
-    @Test
-    @Description("As a User i would like to test Sort option, so that accessories are sorted by name A to Z")
-
-    void testSortAccessoriesNameATOZ() {
-        top.act()
-                .selectAccessories()
-                .andThen()
-                .verifyAccessoriesPage("Accessories");
-        clothes.act()
-                .ClickRelevenceButton()
-                .ClickNameAToZ();
-        clothes.verify()
-                .verifyATOZ();
-
-
-    }
-
-    @Test
-    @Description("As a User i would like to test Sort option, so that accessories are sorted by name Z to A")
-
-    void testSortAccessoriesNameZTOA() {
-        top.act()
-                .selectAccessories()
-                .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyMen();
         clothes.act()
                 .ClickRelevenceButton()
                 .ClickNameZToA();

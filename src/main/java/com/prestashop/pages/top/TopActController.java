@@ -55,9 +55,39 @@ public class TopActController {
     }
 
 
-    public TopActController searchForSomething() {
+    public TopActController searchForHummingbird() {
         driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Hummingbird");
         return this;
+    }
+
+
+    public TopActController searchForMug() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Mug");
+        return this;
+    }
+
+    public TopActController searchForPack() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Pack");
+        return this;
+    }
+    public TopActController searchForPaper() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Paper");
+        return this;
+    }
+    public TopActController searchForColour() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Colour");
+        return this;
+    }
+
+    public TopActController searchForCeramics() {
+        driver.findElement(By.className("ui-autocomplete-input")).sendKeys("Ceramics");
+        return this;
+    }
+
+    public TopActController clickSearch(){
+        driver.findElement(By.className("search")).click();
+        return this;
+
     }
 
 

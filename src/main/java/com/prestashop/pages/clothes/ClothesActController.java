@@ -2,7 +2,8 @@ package com.prestashop.pages.clothes;
 
 import com.prestashop.utils.Color;
 import com.prestashop.utils.CommonVerification;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -104,16 +105,8 @@ public class ClothesActController {
     }
 
     public ClothesActController addToCart() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        for(int i =0; i<2;i++) {
-            try {
-                WebElement button = driver.findElement(addToCartButton());
-                js.executeScript("arguments[0].click()", button);
-                break;
-            }
-            catch(StaleElementReferenceException e) {
-            }
-        }
+        driver.findElement(addToCartButton())
+                .click();
         return this;
     }
 
@@ -122,6 +115,8 @@ public class ClothesActController {
                 .click();
         return this;
     }
+
+
 
     public CommonVerification andThen() {
         return getCommonVerification();
