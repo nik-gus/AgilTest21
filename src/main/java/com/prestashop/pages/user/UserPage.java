@@ -1,5 +1,7 @@
 package com.prestashop.pages.user;
 
+import org.openqa.selenium.By;
+
 public class UserPage {
     private UserActController act;
     private UserVerifyController verify;
@@ -18,6 +20,6 @@ public class UserPage {
     public UserActController act() { return act; }
     public UserVerifyController verify() { return verify; }
 
-
+    public static By notification() { return By.cssSelector("#notifications > div > article"); }
 
 }

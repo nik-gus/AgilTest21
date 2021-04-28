@@ -20,25 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest extends BaseTestClass {
 
-    TopMenu top = getTopMenu();
-    AuthPage auth = getAuthPage();
-    UserPage user = getUserPage();
 
-
-    @Test
-    public void changeUserAddress1(){
-        top.act()
-                .selectSignInButton();
-        auth.act()
-                .enterEmail(TEST_USER_EMAIL)
-                .enterPassword(TEST_USER_PASSWORD)
-                .signIn();
-        user.act()
-                .clickOnAddressesLink()
-                .clickOnUpdateLink()
-                .changeAddress1("Testgatan 12")
-                .clickOnSaveButton();
-        assertEquals("Address successfully updated!", driver.findElement(By.cssSelector("#notifications > div > article")).getText());
 
 //        clickOnSignInLink();
 //        email(Constant_MF.TEST_USER_EMAIL_1);
@@ -144,4 +126,4 @@ CartPage cart = getCartPage();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
     }*/
-} // end class
+//} // end class
