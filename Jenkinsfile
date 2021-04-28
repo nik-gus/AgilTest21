@@ -1,12 +1,6 @@
 pipeline {
     environment {
-        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-            PATH = "/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home";
-        }
-        else if (System.getProperty("os.name").toLowerCase().contains("win")) {
             PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
-        }
-
     }
     agent any
     
