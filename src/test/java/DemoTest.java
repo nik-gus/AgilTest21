@@ -3,8 +3,10 @@ import com.prestashop.pages.cart.CartPage;
 import com.prestashop.pages.clothes.ClothesPage;
 import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
+import com.prestashop.pages.user.UserPage;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.cart.CartPage.getCartPage;
@@ -12,9 +14,27 @@ import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
 import static com.prestashop.pages.clothes.Size.MEDIUM;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
+import static com.prestashop.pages.user.UserPage.getUserPage;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class DemoTest extends BaseTestClass {
+
+
+
+//        clickOnSignInLink();
+//        email(Constant_MF.TEST_USER_EMAIL_1);
+//        password(Constant_MF.TEST_USER_PASSWORD_1);
+//        submitButton();
+//        clickOnAddressesLink();
+//        clickOnUpdateLink();
+//        changeAddress1("Testgatan 12");
+//        clickOnSaveButton();
+//
+//        assertEquals("Address successfully updated!", driver.findElement(By.cssSelector("#notifications > div > article")).getText());
+//        //createANewAddress();
+
+    }
 /*
 TopMenu top = getTopMenu();
 AuthPage authPage = getAuthPage();
@@ -106,4 +126,4 @@ CartPage cart = getCartPage();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
     }*/
-} // end class
+//} // end class
