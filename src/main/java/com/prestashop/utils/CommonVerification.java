@@ -38,6 +38,11 @@ public class CommonVerification {
         return this;
     }
 
+    public CommonVerification verifyUrlFraction(String fraction)  {
+        assertTrue(wait.until(ExpectedConditions.urlContains(fraction)));
+        return this;
+    }
+
     public CommonVerification verifyIsDisplayed(By element) {
         assertTrue(driver.findElement(element).isDisplayed());
         return this;

@@ -47,6 +47,12 @@ public class TopActController {
         return this;
     }
 
+    public TopActController selectArt() {
+        driver.findElement(artLink())
+                .click();
+        return this;
+    }
+
     public TopActController selectCart() {
         WebElement cartButton = driver.findElement(cartLink());
         JavascriptExecutor executor = (JavascriptExecutor) driver;
