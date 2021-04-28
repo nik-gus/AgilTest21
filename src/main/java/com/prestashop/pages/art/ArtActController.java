@@ -20,6 +20,11 @@ public class ArtActController {
         return this;
     }
 
+    public ArtActController selectFilter(String filter) {
+        driver.findElement(By.partialLinkText(filter))
+                .click();
+        return this;
+    }
 
     public CommonVerification andThen() {
         return getCommonVerification();

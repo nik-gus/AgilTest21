@@ -1,5 +1,7 @@
 package com.prestashop.pages.art;
 
+import org.openqa.selenium.By;
+
 public class ArtPage {
 
     private ArtActController act;
@@ -18,5 +20,7 @@ public class ArtPage {
 
     public ArtActController act() { return act; }
     public ArtVerifyController verify() { return verify; }
+
+    public static By activeSearchFilter() { return By.id("js-active-search-filters"); }
 
 }
