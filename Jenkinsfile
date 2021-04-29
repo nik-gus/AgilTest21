@@ -5,7 +5,9 @@ pipeline {
             PATH = "/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
     }
-    agent any
+    agent {
+        node { label 'mac, win' }
+    }
     
     tools {
         maven 'M3'
