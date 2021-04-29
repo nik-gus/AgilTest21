@@ -17,6 +17,7 @@ pipeline {
     stages {
         stage ('Build') {
            steps {
+               echo: $PATH
                 //bat 'mvn clean install'
                 sh 'mvn clean install'
             }
