@@ -6,7 +6,7 @@ pipeline {
 
     }
     agent {
-        node { label 'mac, win' }
+        node { label 'mac' || 'win' }
     }
     
     tools {
