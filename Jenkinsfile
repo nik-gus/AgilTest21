@@ -8,7 +8,6 @@ pipeline {
     agent {
         node { 
             label 'mac'
-            label 'win' 
         }
     }
     
