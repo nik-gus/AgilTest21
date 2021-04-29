@@ -1,14 +1,15 @@
 pipeline {
     environment {
         
-            //PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
-            PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
+            PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
+            //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
     }
     agent {
-        node { 
-            label 'mac'
-        }
+        any
+        //node { 
+            //label 'mac'
+        //}
     }
     
     tools {
@@ -17,9 +18,8 @@ pipeline {
     stages {
         stage ('Build') {
            steps {
-               echo: $PATH
-                //bat 'mvn clean install'
-                sh 'mvn clean install'
+                bat 'mvn clean install'
+                //sh 'mvn clean install'
             }
             post {
                 success {
