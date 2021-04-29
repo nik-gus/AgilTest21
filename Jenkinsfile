@@ -1,5 +1,6 @@
 pipeline {
     environment {
+        
             //PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
             PATH = "/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
