@@ -18,6 +18,7 @@ pipeline {
         stage ('Build') {
            steps {
                 bat 'mvn clean install'
+                bat 'mvn clean install -DWebDriver=Firefox'
                 //sh 'mvn clean install'
             }
             post {
