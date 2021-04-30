@@ -20,20 +20,7 @@ class SortClothesTest extends BaseTestClass {
     CartPage cart = getCartPage();
     OrderPage order = getOrderPage();
 
-    @Test
-    @Description("As a User i would like to test Sort option, so that Both gender clothes are sorted by price Low to High")
-    void testSortBothGenderClothesLowToHigh(){
-        top.act()
-                .selectClothes()
-                .andThen()
-                .verifyPageTitle(PAGE_TITLE_CLOTHES);
-        clothes.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
-        clothes.verify()
-                .verifyLowToHigh();
 
-    }
 
     @Test
     @Description("As a User i would like to test Sort option, so that clothes are sorted by price low to high")

@@ -64,6 +64,8 @@ public class sortAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .ClickRelevenceButton()
                 .ClickNameAToZ();
+        accessories.verify()
+                .verifyATOZ();
 
 
 
@@ -80,6 +82,8 @@ public class sortAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .ClickRelevenceButton()
                 .ClickNameZToA();
+        accessories.verify()
+                .verifyZTOA();
 
 
 

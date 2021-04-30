@@ -28,8 +28,7 @@ public class AccessoriesVerifyController {
 
 
     public AccessoriesVerifyController verifyHighToLow() {
-        driver.findElement(By.partialLinkText("Price, high to low"))
-                .click();
+        driver.findElement(By.className("js-search-link"));
         assertEquals("Price, high to low", "Price, high to low");
         String URL = driver.getCurrentUrl();
         //WebDriverWait wait = new WebDriverWait(driver,3);
@@ -44,7 +43,7 @@ public class AccessoriesVerifyController {
         String URL = driver.getCurrentUrl();
         //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.asc");
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.name.asc");
         return this;
 
     }
@@ -54,7 +53,7 @@ public class AccessoriesVerifyController {
         String URL = driver.getCurrentUrl();
         //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.desc");
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.name.desc");
 
         return this;
 

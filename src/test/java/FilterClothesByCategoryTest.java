@@ -34,5 +34,7 @@ class FilterClothesByCategoryTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
     }
+
+
 }
 
