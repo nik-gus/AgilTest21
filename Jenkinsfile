@@ -5,12 +5,11 @@ pipeline {
             //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
     }
-    agent {
-        any
+    agent any
         //node { 
             //label 'mac'
         //}
-    }
+    
     
     tools {
         maven 'M3'
@@ -19,6 +18,7 @@ pipeline {
         stage ('Build') {
            steps {
                 bat 'mvn clean install'
+                //bat 'mvn clean install -DWebDriver=Firefox'
                 //sh 'mvn clean install'
             }
             post {
