@@ -5,12 +5,11 @@ pipeline {
             //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
     }
-    agent {
-        any
+    agent any
         //node { 
             //label 'mac'
         //}
-    }
+    
     
     tools {
         maven 'M3'
