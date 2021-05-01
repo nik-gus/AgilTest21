@@ -8,8 +8,6 @@ public class AccessoriesPage {
     public static final String PAGE_TITLE_CLOTHES =
             "Accessories";
 
-
-
     private AccessoriesActController act;
     private AccessoriesVerifyController verify;
 

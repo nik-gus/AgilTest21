@@ -2,9 +2,7 @@ package com.prestashop.pages.clothes;
 
 import com.prestashop.utils.Color;
 import com.prestashop.utils.CommonVerification;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,12 +10,15 @@ import static com.prestashop.pages.clothes.ClothesPage.*;
 import static com.prestashop.utils.CommonVerification.getCommonVerification;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ClothesActController {
 
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
+
+    public CommonVerification andThen() {
+        return getCommonVerification();
+    }
 
     public ClothesActController selectMen() {
         driver.findElement(By.partialLinkText("Men"))
@@ -102,27 +103,38 @@ public class ClothesActController {
     }
 
     public ClothesActController chooseColor(Color color) {
-        driver.findElement(clothingColor(color))
-                .click();
+        var attempts = 0;
+        while(attempts < 2) {
+            try {
+                driver.findElement(clothingColor(color)).click();
+                break;
+            } catch(StaleElementReferenceException e) {
+                e.printStackTrace();
+            }
+            attempts++;
+        }
         return this;
     }
 
     public ClothesActController addToCart() {
-        driver.findElement(addToCartButton())
-                .click();
+        var attempts = 0;
+        while (attempts < 2) {
+            try {
+                driver.findElement(addToCartButton()).click();
+                break;
+            } catch (StaleElementReferenceException e) {
+                e.printStackTrace();
+            }
+            attempts++;
+        }
         return this;
     }
 
     public ClothesActController proceedToCart() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCartInPopupButton()))
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCartInPopupButton()))
+        wait.until(ExpectedConditions.elementToBeClickable(proceedToCartInPopupButton()))
                 .click();
         return this;
-    }
-
-
-
-    public CommonVerification andThen() {
-        return getCommonVerification();
     }
 
 }
