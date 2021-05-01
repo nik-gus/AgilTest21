@@ -15,8 +15,6 @@ class FilterClothesByCategoryTest extends BaseTestClass {
 
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();
-    CartPage cart = getCartPage();
-    OrderPage order = getOrderPage();
 
     @Test
     @Description("As a User i would like to test Filter option in Clothes, so that I can filter women by Category")

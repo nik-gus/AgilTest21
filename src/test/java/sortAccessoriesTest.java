@@ -11,13 +11,9 @@ import static com.prestashop.pages.cart.CartPage.getCartPage;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class sortAccessoriesTest extends BaseTestClass{
+class sortAccessoriesTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
-    CartPage cart = getCartPage();
-    OrderPage order = getOrderPage();
-
-
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by price low to high")
@@ -32,13 +28,10 @@ public class sortAccessoriesTest extends BaseTestClass{
                 .ClickLowToHigh();
         accessories.verify()
                 .verifyLowToHigh();
-
-
     }
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by price high to low")
-
     void testSortAccessoriesHighToLow() {
         top.act()
                 .selectAccessories()
@@ -49,13 +42,10 @@ public class sortAccessoriesTest extends BaseTestClass{
                 .ClickHighToLow();
         accessories.verify()
                 .verifyHighToLow();
-
-
     }
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by name A to Z")
-
     void testSortAccessoriesNameATOZ() {
         top.act()
                 .selectAccessories()
@@ -73,7 +63,6 @@ public class sortAccessoriesTest extends BaseTestClass{
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by name Z to A")
-
     void testSortAccessoriesNameZTOA() {
         top.act()
                 .selectAccessories()
@@ -84,9 +73,6 @@ public class sortAccessoriesTest extends BaseTestClass{
                 .ClickNameZToA();
         accessories.verify()
                 .verifyZTOA();
-
-
-
     }
 
 }
