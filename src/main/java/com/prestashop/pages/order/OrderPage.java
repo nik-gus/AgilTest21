@@ -58,7 +58,9 @@ public class OrderPage {
     public static By emailFieldOrderAsGuest() { return By.cssSelector("#customer-form > section > div:nth-child(4) > div.col-md-6 > input"); }
     public static By emailFieldSignIn() { return By.cssSelector("#login-form > section > div:nth-child(2) > div.col-md-6 > input"); }
 
-    //public static By passwordField() { return By.name("password"); }
+    //Error messagees
+    public static By alertMessageEmail() { return By.className("alert-danger"); }
+
     public static By passwordField() { return By.cssSelector("#login-form > section > div:nth-child(3) > div.col-md-6 > div > input[name='password']"); }
     public static By agreeToTermsAndConditionsCheckBox() { return By.name("conditions_to_approve[terms-and-conditions]"); }
     public static By personalInformationAgreeToTerms() { return By.name("psgdpr"); }

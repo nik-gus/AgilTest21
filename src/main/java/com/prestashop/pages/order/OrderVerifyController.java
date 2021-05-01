@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.prestashop.pages.order.OrderPage.orderConfirmationMessage;
+import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderVerifyController {
 
@@ -22,9 +22,18 @@ public class OrderVerifyController {
     }
 
     public OrderVerifyController emailRejected() {
-        WebElement alert = driver.findElement(By.name("email"));
-        assertTrue(alert.getAttribute("validationMessage").contains("Please"));
+        WebElement emailField = driver.findElement(By.name("email"));
+        if (emailField.getAttribute("validationMessage").isEmpty()) {
+            assertEquals("Invalid format.", driver.findElement(alertMessageEmail()).getText());
+        }
+        else {
+            assertFalse(emailField.getAttribute("validationMessage").isBlank());
+        }
         return this;
     }
 
+    public void agreeToTermsErrorMessageDisplayed() {
+        WebElement alert = driver.findElement(personalInformationAgreeToTerms());
+        assertTrue(alert.getAttribute("validationMessage").contains("Please"));
+    }
 }
