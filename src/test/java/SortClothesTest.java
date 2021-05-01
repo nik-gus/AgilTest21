@@ -23,8 +23,8 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .verifyMen();
         clothes.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
+                .clickRelevenceButton()
+                .clickLowToHigh();
         clothes.verify()
                 .verifyLowToHigh();
     }
@@ -41,8 +41,8 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .verifyMen();
         clothes.act()
-                .ClickRelevenceButton()
-                .ClickHighToLow();
+                .clickRelevenceButton()
+                .clickHighToLow();
         clothes.verify()
                 .verifyHighToLow();
     }
@@ -59,8 +59,8 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .verifyMen();
         clothes.act()
-                .ClickRelevenceButton()
-                .ClickNameAToZ();
+                .clickRelevenceButton()
+                .clickNameAToZ();
         clothes.verify()
                 .verifyATOZ();
     }
@@ -77,8 +77,8 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .verifyMen();
         clothes.act()
-                .ClickRelevenceButton()
-                .ClickNameZToA();
+                .clickRelevenceButton()
+                .clickNameZToA();
         clothes.verify()
                 .verifyZTOA();
     }

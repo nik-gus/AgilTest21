@@ -36,4 +36,5 @@ public class OrderVerifyController {
         WebElement alert = driver.findElement(personalInformationAgreeToTerms());
         assertTrue(alert.getAttribute("validationMessage").contains("Please"));
     }
+
 }

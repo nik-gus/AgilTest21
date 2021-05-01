@@ -23,10 +23,8 @@ public class ClothesActController {
     public ClothesActController selectMen() {
         driver.findElement(By.partialLinkText("Men"))
                 .click();
-
         return this;
     }
-
 
     public ClothesActController selectWomen() {
         driver.findElement(By.partialLinkText("Women"))
@@ -34,26 +32,25 @@ public class ClothesActController {
         return this;
     }
 
-
-    public ClothesActController ClickLowToHigh() {
+    public ClothesActController clickLowToHigh() {
         driver.findElement(By.partialLinkText("Price, low to high"))
                 .click();
         return this;
     }
 
-    public ClothesActController ClickHighToLow() {
+    public ClothesActController clickHighToLow() {
         driver.findElement(By.partialLinkText("Price, high to low"))
                 .click();
         return this;
     }
 
-    public ClothesActController ClickNameAToZ() {
+    public ClothesActController clickNameAToZ() {
         driver.findElement(By.partialLinkText("Name, A to Z"))
                 .click();
         return this;
     }
 
-    public ClothesActController ClickNameZToA() {
+    public ClothesActController clickNameZToA() {
         driver.findElement(By.partialLinkText("Name, Z to A"))
                 .click();
         return this;
@@ -65,13 +62,13 @@ public class ClothesActController {
         return this;
     }
 
-    public ClothesActController ClickRelevenceButton() {
+    public ClothesActController clickRelevenceButton() {
         driver.findElement(By.className("products-sort-order"))
                 .click();
         return this;
     }
 
-    public ClothesActController ClickMen() {
+    public ClothesActController clickMen() {
         driver.findElement(By.id("category-4"))
                 .click();
         return this;
@@ -131,7 +128,6 @@ public class ClothesActController {
     }
 
     public ClothesActController proceedToCart() {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCartInPopupButton()))
         wait.until(ExpectedConditions.elementToBeClickable(proceedToCartInPopupButton()))
                 .click();
         return this;

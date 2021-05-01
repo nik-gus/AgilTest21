@@ -1,11 +1,7 @@
 package com.prestashop.pages.accessories;
 
-import com.prestashop.pages.clothes.ClothesActController;
-import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.clothes.ClothesVerifyController;
-
 public class AccessoriesPage {
-    public static final String PAGE_TITLE_CLOTHES =
+    public static final String PAGE_TITLE_ACCESSORIES =
             "Accessories";
 
     private AccessoriesActController act;
@@ -19,7 +15,6 @@ public class AccessoriesPage {
         this.act = act;
         this.verify = verify;
     }
-
 
     //static factory method
     public static AccessoriesPage getAccessoriesPage() {

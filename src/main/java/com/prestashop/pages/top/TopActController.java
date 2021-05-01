@@ -18,6 +18,10 @@ public class TopActController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
+    public CommonVerification andThen() {
+        return getCommonVerification();
+    }
+
     public TopActController selectSignInButton() {
         driver.findElement(By.partialLinkText("Sign in"))
                 .click();
@@ -93,13 +97,6 @@ public class TopActController {
     public TopActController clickSearch(){
         driver.findElement(By.className("search")).click();
         return this;
-
     }
-
-
-    public CommonVerification andThen() {
-        return getCommonVerification();
-    }
-
 
 }

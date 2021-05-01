@@ -22,7 +22,7 @@ class IncorrectUserTest extends BaseTestClass{
                 .agreeToTerms()
                 .saveAccount();
         authPage.verify()
-                .EmptyFieldFailed();
+                .emptyFieldFailed();
     }
 
     @Test

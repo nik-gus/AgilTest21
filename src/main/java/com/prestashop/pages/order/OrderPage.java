@@ -2,17 +2,11 @@ package com.prestashop.pages.order;
 
 import org.openqa.selenium.By;
 
-
 public class OrderPage {
-
-
-
     public static final String URL_PATH_ORDER =
             "/en/order";
     public static final String PAGE_TITLE_ORDER_CONFIRMATION =
             "Order confirmation";
-
-
 
     private OrderActController act;
     private OrderVerifyController verify;

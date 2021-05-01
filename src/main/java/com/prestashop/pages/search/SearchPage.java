@@ -1,6 +1,5 @@
 package com.prestashop.pages.search;
 
-
 public class SearchPage {
     private SearchActController act;
     private SearchVerifyController verify;
@@ -21,4 +20,5 @@ public class SearchPage {
     public SearchVerifyController verify() {
         return verify;
     }
+
 }

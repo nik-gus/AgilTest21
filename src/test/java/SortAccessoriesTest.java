@@ -1,17 +1,12 @@
 import com.prestashop.pages.accessories.AccessoriesPage;
-import com.prestashop.pages.cart.CartPage;
-import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
-import static com.prestashop.pages.cart.CartPage.getCartPage;
-import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-class sortAccessoriesTest extends BaseTestClass{
+class SortAccessoriesTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
 
@@ -24,8 +19,8 @@ class sortAccessoriesTest extends BaseTestClass{
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
+                .clickRelevenceButton()
+                .clickLowToHigh();
         accessories.verify()
                 .verifyLowToHigh();
     }
@@ -38,8 +33,8 @@ class sortAccessoriesTest extends BaseTestClass{
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickHighToLow();
+                .clickRelevenceButton()
+                .clickHighToLow();
         accessories.verify()
                 .verifyHighToLow();
     }
@@ -52,8 +47,8 @@ class sortAccessoriesTest extends BaseTestClass{
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameAToZ();
+                .clickRelevenceButton()
+                .clickNameAToZ();
         accessories.verify()
                 .verifyATOZ();
 
@@ -69,8 +64,8 @@ class sortAccessoriesTest extends BaseTestClass{
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameZToA();
+                .clickRelevenceButton()
+                .clickNameZToA();
         accessories.verify()
                 .verifyZTOA();
     }

@@ -19,8 +19,6 @@ public class ArtVerifyController {
 
     public ArtVerifyController verifyPackResults(){
         driver.findElement(By.className("h2"));
-        String URL = driver.getCurrentUrl();
-        //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("search&s=Pack"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Pack");
         return this;
@@ -30,8 +28,6 @@ public class ArtVerifyController {
 
     public ArtVerifyController verifyPaperResults(){
         driver.findElement(By.className("h2"));
-        String URL = driver.getCurrentUrl();
-        //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("search&s=Paper"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Paper");
         return this;
@@ -40,8 +36,6 @@ public class ArtVerifyController {
 
     public ArtVerifyController verifyColourResults(){
         driver.findElement(By.className("h2"));
-        String URL = driver.getCurrentUrl();
-        //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("search&s=Colour"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Colour");
         return this;
@@ -50,8 +44,6 @@ public class ArtVerifyController {
 
     public ArtVerifyController verifyCeramicsResults(){
         driver.findElement(By.className("h2"));
-        String URL = driver.getCurrentUrl();
-        //WebDriverWait wait = new WebDriverWait(driver,3);
         wait.until(ExpectedConditions.urlContains("search&s=Ceramics"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Ceramics");
         return this;

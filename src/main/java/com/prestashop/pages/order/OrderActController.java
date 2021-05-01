@@ -16,6 +16,10 @@ public class OrderActController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
+    public CommonVerification andThen() {
+        return getCommonVerification();
+    }
+
     public OrderActController enterAddress(String address) {
         driver.findElement(addressTextField())
                 .sendKeys(address);
@@ -45,7 +49,6 @@ public class OrderActController {
                 .click();
         return this;
     }
-
 
     public OrderActController payByBankWire() {
         driver.findElement(payByBankWireRadioButton())
@@ -143,14 +146,10 @@ public class OrderActController {
         return this;
     }
 
-    public CommonVerification andThen() {
-        return getCommonVerification();
-    }
-
-
     public OrderActController confirmAddress() {
         driver.findElement(confirmAddressButton())
                 .click();
         return this;
     }
+
 }
