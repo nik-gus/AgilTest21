@@ -3,7 +3,7 @@ Feature: Check Out And Pay
     Given Guest user is on order page
 
   Scenario Outline: Guest User enters invalid email address
-    When User inputs <invalid email> address
+    When User inputs <invalid email> as email address
     Then Error message should be displayed
     Examples:
     | invalid email |

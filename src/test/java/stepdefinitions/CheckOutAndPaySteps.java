@@ -66,7 +66,7 @@ public class CheckOutAndPaySteps {
                 .verifyUrlPath(URL_PATH_ORDER);
     }
 
-    @When("^User inputs (.*) address$")
+    @When("^User inputs (.*) as email address$")
     public void userInputsInvalidEmailAddress(String emailAddress) {
         order.act()
                 .selectSocialTitleMr()
@@ -98,6 +98,5 @@ public class CheckOutAndPaySteps {
         order.verify()
                 .agreeToTermsErrorMessageDisplayed();
     }
-
 
 }
