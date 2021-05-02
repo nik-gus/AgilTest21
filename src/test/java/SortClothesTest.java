@@ -19,14 +19,14 @@ class SortClothesTest extends BaseTestClass {
                 .andThen()
                 .verifyPageTitle(PAGE_TITLE_CLOTHES);
         clothes.act()
-                .selectMen();
+                .selectMen(); //Obs, klickar på översta länken, ej filter
         clothes.verify()
-                .verifyMen();
+                .subPageMen();
         clothes.act()
                 .clickRelevenceButton()
                 .clickLowToHigh();
         clothes.verify()
-                .verifyLowToHigh();
+                .productsIsSortedByPriceLowToHigh();
     }
 
     @Test
@@ -39,12 +39,12 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen();
+                .subPageMen();
         clothes.act()
                 .clickRelevenceButton()
                 .clickHighToLow();
         clothes.verify()
-                .verifyHighToLow();
+                .productsIsSortedByPriceHighToLow();
     }
 
     @Test
@@ -57,12 +57,12 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen();
+                .subPageMen();
         clothes.act()
                 .clickRelevenceButton()
                 .clickNameAToZ();
         clothes.verify()
-                .verifyATOZ();
+                .productsIsSortedByNameAToZ();
     }
 
     @Test
@@ -75,12 +75,12 @@ class SortClothesTest extends BaseTestClass {
         clothes.act()
                 .selectMen();
         clothes.verify()
-                .verifyMen();
+                .subPageMen();
         clothes.act()
                 .clickRelevenceButton()
                 .clickNameZToA();
         clothes.verify()
-                .verifyZTOA();
+                .productsIsSortedByNameZToA();
     }
 
 }

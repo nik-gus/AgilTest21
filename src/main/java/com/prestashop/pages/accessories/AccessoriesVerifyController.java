@@ -17,7 +17,6 @@ public class AccessoriesVerifyController {
 
     public AccessoriesVerifyController verifyLowToHigh() {
         driver.findElement(By.className("js-search-link"));
-        assertEquals("Price, low to high", "Price, low to high");
         wait.until(ExpectedConditions.urlContains("6-accessories?order=product.price.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.price.asc");
         return this;
@@ -26,7 +25,6 @@ public class AccessoriesVerifyController {
 
     public AccessoriesVerifyController verifyHighToLow() {
         driver.findElement(By.className("js-search-link"));
-        assertEquals("Price, high to low", "Price, high to low");
         wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.price.desc");
 

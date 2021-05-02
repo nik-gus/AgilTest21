@@ -23,35 +23,35 @@ public class ClothesVerifyController {
         return this;
     }
 
-    public ClothesVerifyController verifyMen() {
+    public ClothesVerifyController subPageMen() { //verifierar ny sida "Men", ej filter
         driver.findElement(By.partialLinkText("Men"));
         wait.until(ExpectedConditions.urlContains("4-men"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men");
         return this;
     }
 
-    public ClothesVerifyController verifyLowToHigh() {
+    public ClothesVerifyController productsIsSortedByPriceLowToHigh() {
         driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.price.asc");
         return this;
     }
 
-    public ClothesVerifyController verifyHighToLow(){
+    public ClothesVerifyController productsIsSortedByPriceHighToLow(){
         driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.price.desc");
         return this;
 
     }
-    public ClothesVerifyController verifyATOZ(){
+    public ClothesVerifyController productsIsSortedByNameAToZ(){
         driver.findElement(By.className("js-search-link")).getAttribute("Name, A to Z");
         wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.asc");
         return this;
     }
 
-    public ClothesVerifyController verifyZTOA(){
+    public ClothesVerifyController productsIsSortedByNameZToA(){
         driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.desc");

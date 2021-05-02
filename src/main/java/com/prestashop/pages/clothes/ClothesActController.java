@@ -81,14 +81,14 @@ public class ClothesActController {
     }
 
     public ClothesActController selectFirstArticleOfClothing() {
-        driver.findElement(firstArticle())
+        driver.findElement(articleByOrderOfAppearance(1))
                 .click();
         return this;
     }
 
     public ClothesActController selectLastArticleOfClothing() {
         int totalArticles = driver.findElements(By.tagName("article")).size();
-        driver.findElement(lastArticle(totalArticles))
+        driver.findElement(articleByOrderOfAppearance(totalArticles))
                 .click();
         return this;
     }
@@ -128,7 +128,7 @@ public class ClothesActController {
     }
 
     public ClothesActController proceedToCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(proceedToCartInPopupButton()))
+        wait.until(ExpectedConditions.elementToBeClickable(proceedToCartButtonInPopup()))
                 .click();
         return this;
     }
