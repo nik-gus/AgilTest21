@@ -1,7 +1,7 @@
 Feature: Search Function
 
   Scenario Outline: User search item
-    Given user search <item>
+    When user search <item>
     Then item will be searched
     Examples:
       | item |

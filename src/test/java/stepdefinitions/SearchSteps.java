@@ -5,6 +5,7 @@ import com.prestashop.pages.top.TopMenu;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,7 +26,7 @@ public class SearchSteps {
         driver.get("http://40.76.27.113:8085/en/");
     }
 
-    @Given("^user search (.*)$")
+    @When("^user search (.*)$")
     public void UserSearchItem(String item){
         search.act()
                 .typeSearch(item)
