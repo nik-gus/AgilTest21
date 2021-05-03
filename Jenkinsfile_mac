@@ -2,8 +2,8 @@ pipeline {
     environment {
         
             //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
-
     }
+    
     agent { 
     label 'mac'
     }
@@ -12,6 +12,8 @@ pipeline {
         maven 'M3'
     }
     
+    options { timestamps () }
+    
     stages {
         stage ('Build') {
            steps {
@@ -19,12 +21,14 @@ pipeline {
                 //bat 'mvn clean install -DWebDriver=Firefox'
                 sh 'mvn clean install'
             }
+            
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
                 }
             }
         }
+        
         /*
         stage ('Run Jmeter tests') {
             steps {
