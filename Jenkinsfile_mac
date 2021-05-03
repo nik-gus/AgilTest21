@@ -4,15 +4,14 @@ pipeline {
             //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
 
     }
-    agent any
-        //node { 
-            //label 'mac'
-        //}
-    
-    
+    agent { 
+    label 'mac'
+    }
+        
     tools {
         maven 'M3'
     }
+    
     stages {
         stage ('Build') {
            steps {
