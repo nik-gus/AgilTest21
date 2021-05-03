@@ -20,9 +20,6 @@ pipeline {
         stage ('Build') {
            steps {
                bat 'mvn clean install'
-               catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                   bat "exit 1"
-               }
                 //bat 'mvn clean install -DWebDriver=Firefox'
                 //sh 'mvn clean install
            }     
@@ -34,8 +31,7 @@ pipeline {
         }    
         stage ('Run Jmeter tests') {  
             steps {
-                bat 'exit 0'
-                bat 'C:\\Tools\\apache-jmeter-5.4.1\\bin\\jmeter.bat -Jjmeter.save.saveservice.output_format=xml -n -t C:\\Tools\\Project_PrestaShop\\performance\\PrestaShop_LOGIN.jmx -l jmeter_PSreportLOGIN.jtl'
+                bat 'C:\\Tools\\apache-jmeter-5.4.1\\bin\\jmeter.bat -Jjmeter.save.saveservice.output_format=xml -n -t C:\\Tools\\apache-jmeter-5.4.1\\bin\\PrestaShop_LOGIN.jmx -l jmeter_PSreportLOGIN.jtl'
                 perfReport 'jmeter_report.jtl'
             }
         }
