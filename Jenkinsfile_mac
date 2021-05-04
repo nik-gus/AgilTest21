@@ -1,10 +1,4 @@
 pipeline {
-    environment {
-            //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
-            PATH="/bin/sh;/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/
-            
-    }
-    
     agent { 
     label 'mac'
     }
@@ -18,9 +12,11 @@ pipeline {
     stages {
         stage ('Build') {
            steps {
-                //bat 'mvn clean install'
-                //bat 'mvn clean install -DWebDriver=Firefox'
-                sh 'mvn clean install'
+                  withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+                    sh '''
+                        mvn clean install
+                    '''
+                    }
             }
             
             post {
