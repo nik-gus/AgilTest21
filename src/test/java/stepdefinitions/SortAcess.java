@@ -53,7 +53,7 @@ public class SortAcess {
     }
     @Then("Success message is displayed")
     public void success_message_is_displayed() {
-        System.out.println("Sorted by AtoZ successfull");
+        System.out.println("Sorted is successfull");
 
     }
 
@@ -63,6 +63,7 @@ public class SortAcess {
                 .ClickRelevenceButton()
                 .ClickNameZToA();
     }
+
 
     @When(": User chooses to sort products by Low To High")
     public void userChoosesToSortProductsByLowToHigh() {
