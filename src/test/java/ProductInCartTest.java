@@ -12,7 +12,6 @@ import static com.prestashop.pages.top.TopMenu.getTopMenu;
 class ProductInCartTest extends BaseTestClass {
 
     TopMenu top = getTopMenu();
-    OrderPage order = getOrderPage();
     ClothesPage clothes = ClothesPage.getClothesPage();
     CartPage cart = getCartPage();
 

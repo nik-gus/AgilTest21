@@ -1,9 +1,6 @@
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.concurrent.TimeUnit;
 
 import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
@@ -25,7 +22,7 @@ class IncorrectUserTest extends BaseTestClass{
                 .agreeToTerms()
                 .saveAccount();
         authPage.verify()
-                .EmptyFieldFailed();
+                .emptyFieldFailed();
     }
 
     @Test

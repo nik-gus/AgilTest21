@@ -29,8 +29,6 @@ public class AuthVerifyController {
 
     public AuthVerifyController missingAtEmail() {
         WebElement alert = driver.findElement(By.name("email"));
-        //assertTrue(alert.getAttribute("validationMessage").contains("Please include an '@' in the email address."));
-        //Error message in Firefox: "Please enter an email address."
         assertTrue(alert.getAttribute("validationMessage").contains("email address."));
 
         return this;
@@ -38,8 +36,6 @@ public class AuthVerifyController {
 
     public AuthVerifyController missingAfterAtEmail() {
         WebElement alert = driver.findElement(By.name("email"));
-        //assertTrue(alert.getAttribute("validationMessage").contains("Please enter a part following '@'."));
-        ////Error message in Firefox: "Please enter an email address."
         assertTrue(alert.getAttribute("validationMessage").contains("Please enter"));
 
         return this;
@@ -63,7 +59,7 @@ public class AuthVerifyController {
         return this;
     }
 
-    public AuthVerifyController EmptyFieldFailed() {
+    public AuthVerifyController emptyFieldFailed() {
         WebElement alert = null;
         String firstname = driver.findElement(By.name("firstname")).getAttribute("value");
         String lastname = driver.findElement(By.name("lastname")).getAttribute("value");

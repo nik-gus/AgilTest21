@@ -1,23 +1,14 @@
 import com.prestashop.pages.accessories.AccessoriesPage;
-import com.prestashop.pages.cart.CartPage;
-import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
-import static com.prestashop.pages.cart.CartPage.getCartPage;
-import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class sortAccessoriesTest extends BaseTestClass{
+class SortAccessoriesTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
-    CartPage cart = getCartPage();
-    OrderPage order = getOrderPage();
-
-
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by price low to high")
@@ -28,42 +19,36 @@ public class sortAccessoriesTest extends BaseTestClass{
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
+                .clickRelevenceButton()
+                .clickLowToHigh();
         accessories.verify()
                 .verifyLowToHigh();
-
-
     }
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by price high to low")
-
     void testSortAccessoriesHighToLow() {
         top.act()
                 .selectAccessories()
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickHighToLow();
+                .clickRelevenceButton()
+                .clickHighToLow();
         accessories.verify()
                 .verifyHighToLow();
-
-
     }
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by name A to Z")
-
     void testSortAccessoriesNameATOZ() {
         top.act()
                 .selectAccessories()
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameAToZ();
+                .clickRelevenceButton()
+                .clickNameAToZ();
         accessories.verify()
                 .verifyATOZ();
 
@@ -73,20 +58,16 @@ public class sortAccessoriesTest extends BaseTestClass{
 
     @Test
     @Description("As a User i would like to test Sort option, so that accessories are sorted by name Z to A")
-
     void testSortAccessoriesNameZTOA() {
         top.act()
                 .selectAccessories()
                 .andThen()
                 .verifyAccessoriesPage("Accessories");
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameZToA();
+                .clickRelevenceButton()
+                .clickNameZToA();
         accessories.verify()
                 .verifyZTOA();
-
-
-
     }
 
 }

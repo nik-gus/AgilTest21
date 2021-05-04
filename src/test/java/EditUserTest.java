@@ -2,19 +2,16 @@ import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
 import com.prestashop.pages.user.UserPage;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.pages.user.UserPage.getUserPage;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class EditUserTest extends BaseTestClass{
+class EditUserTest extends BaseTestClass{
 
     TopMenu top = getTopMenu();
     AuthPage auth = getAuthPage();
     UserPage user = getUserPage();
-
 
     @Test
     void changeUserAddress1() {

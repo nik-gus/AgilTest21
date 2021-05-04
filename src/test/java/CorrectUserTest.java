@@ -41,14 +41,7 @@ class CorrectUserTest extends BaseTestClass {
                 .saveAccount();
         top.verify()
                 .userLoggedIn("Test Testsson");
-
-
     }
 
-
-
-
-
-
-    }
+}
 

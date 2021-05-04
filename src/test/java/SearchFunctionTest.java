@@ -19,11 +19,7 @@ class SearchFunctionTest extends BaseTestClass {
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();
     AccessoriesPage accessories = getAccessoriesPage();
-    CartPage cart = getCartPage();
-    OrderPage order = getOrderPage();
     ArtPage art = getArtPage();
-
-
 
     @Test
     @Description("As a User i would like to test search for Hummingbird, to check so that i can find all Humingbird products")
@@ -43,7 +39,6 @@ class SearchFunctionTest extends BaseTestClass {
                 .clickSearch();
         accessories.verify()
                 .verifyMugResults();
-
     }
 
     @Test

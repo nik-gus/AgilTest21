@@ -4,14 +4,12 @@ import com.prestashop.utils.Color;
 import org.openqa.selenium.By;
 
 public class ClothesPage {
-
     public static final String PAGE_TITLE_CLOTHES =
             "Clothes";
     public static final String HUMMINGBIRD_PRINTED_T_SHIRT =
             "Hummingbird printed t-shirt";
     public static final String HUMMINGBIRD_PRINTED_SWEATER =
             "Brown bear printed sweater";
-
 
     private ClothesActController act;
     private ClothesVerifyController verify;
@@ -49,15 +47,9 @@ public class ClothesPage {
     public static By sizeMFilter() {
         return By.cssSelector("#js-active-search-filters > ul > li");
     }
-    public static By firstArticle() {
-        return By.cssSelector("[data-id-product='1']") ;
-    }
-    public static By lastArticle(int totalArticles) {
-        return By.cssSelector("[data-id-product='" + totalArticles +"']");
-    }
 
-    public static By addedToCartConfirmationMessage() {
-        return By.id("myModalLabel");
+    public static By articleByOrderOfAppearance(int order) {
+        return By.cssSelector("[data-id-product='" + order +"']");
     }
 
     public static By clothingSize(Size size) {
@@ -67,10 +59,16 @@ public class ClothesPage {
         return By.xpath("//li[2]//label[1]//input[" +color +"]");
     }
 
-    public static By proceedToCartInPopupButton(){ return By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"); }
+    public static By proceedToCartButtonInPopup(){
+        return By.cssSelector("#blockcart-modal > div > div > div.modal-body > div > div.col-md-7 > div > div > a"); }
     public static By addToCartButton() {
         //return By.cssSelector("button[data-button-action='add-to-cart']");
         return By.cssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add > button");
     }
+
+    public static By addedToCartConfirmationMessage() {
+        return By.id("myModalLabel");
+    }
+
 
 }

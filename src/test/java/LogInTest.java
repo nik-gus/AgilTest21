@@ -5,11 +5,9 @@ import org.junit.jupiter.api.Test;
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-
 class LogInTest extends BaseTestClass {
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
-
 
     @Test
     void testLogIn() {
@@ -26,4 +24,3 @@ class LogInTest extends BaseTestClass {
     }
 
 }
-

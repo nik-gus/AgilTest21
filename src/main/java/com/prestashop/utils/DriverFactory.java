@@ -20,7 +20,6 @@ public class DriverFactory {
 
     private static WebDriver driver;
     private static WebDriverWait wait;
-    private static String driverProperty;
 
 
     private DriverFactory() {
@@ -33,7 +32,7 @@ public class DriverFactory {
             return driver;
         }
 
-        driverProperty = System.getProperty("WebDriver");
+        String driverProperty = System.getProperty("WebDriver");
 
         // if no driver parameter is set, create default driver (Chrome)
         if (driverProperty == null) {
