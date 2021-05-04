@@ -48,8 +48,8 @@ public class SortAcess {
     @When(": User chooses to sort products by A To Z")
     public void user_chooses_to_sort_products_by_a_to_z() {
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameAToZ();
+                .clickRelevenceButton()
+                .clickNameAToZ();
     }
     @Then("Success message is displayed")
     public void success_message_is_displayed() {
@@ -60,22 +60,22 @@ public class SortAcess {
     @When(": User chooses to sort products by Z To A")
     public void userChoosesToSortProductsByZToA() {
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickNameZToA();
+                .clickRelevenceButton()
+                .clickNameZToA();
     }
 
 
     @When(": User chooses to sort products by Low To High")
     public void userChoosesToSortProductsByLowToHigh() {
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickLowToHigh();
+                .clickRelevenceButton()
+                .clickLowToHigh();
     }
 
     @When(": User chooses to sort products by High To Low")
     public void userChoosesToSortProductsByHighToLow() {
         accessories.act()
-                .ClickRelevenceButton()
-                .ClickHighToLow();
+                .clickRelevenceButton()
+                .clickHighToLow();
     }
 }
