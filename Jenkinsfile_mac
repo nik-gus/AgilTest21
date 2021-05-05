@@ -12,24 +12,24 @@ pipeline {
     options { timestamps () }
     
     stages {
-        stage ('Build - Chrome') {
+        stage('Build - Chrome') {
             steps {
-                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
                     sh 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Chrome'
                 }
             }
         }
-        stage ('Build - Firefox') {
+        stage('Build - Firefox') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
                     sh 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Firefox'
                 }
             }
         }
-        post {
-            success {
-                junit 'target/surefire-reports/**/*.xml'
-            }
+    }
+    post {
+        success {
+            junit 'target/surefire-reports/**/*.xml'
         }
     }
 
