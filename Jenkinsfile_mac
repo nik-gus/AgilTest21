@@ -3,8 +3,8 @@ pipeline {
     label 'mac'
     }
 
-    triggers { cron('*/15 * * * *') }
-        
+    triggers { pollSCM('* * * * *') }
+
     tools {
         maven 'M3'
     }
