@@ -28,7 +28,7 @@ pipeline {
                     attachLog: true,
                     compressLog: true,
                     recipientProviders: [upstreamDevelopers()],
-                    to: 'niklas.gustafsson@gmail.com'
+                    to: 'nikgus@icloud.com'
         }
     }
 }
