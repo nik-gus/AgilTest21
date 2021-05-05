@@ -3,7 +3,7 @@ pipeline {
             PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
     }
     agent {
-            label 'mac'
+            label 'win'
         }
     
     tools {
