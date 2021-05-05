@@ -1,14 +1,10 @@
 pipeline {
     environment {
-        
             PATH = "C:\\WINDOWS\\SYSTEM32;C:\\Tools\\Java\\jdk-15.0.2\\bin"
-            //PATH="/usr/local/bin;/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/"
-
     }
-    agent any
-        //node { 
-            //label 'mac'
-        //}
+    agent {
+            label 'mac'
+        }
     
     tools {
         maven 'M3'
@@ -19,10 +15,12 @@ pipeline {
     stages {
         stage ('Build') {
            steps {
-               bat 'mvn clean install'
-                //bat 'mvn clean install -DWebDriver=Firefox'
-                //sh 'mvn clean install
-           }     
+               bat ''''
+                    mvn clean install -WebDriver=Chrome
+                    mvn clean install -WebDriver=Firefox
+                    '''
+           }
+
            post {
                success {
                    junit 'target/surefire-reports/**/*.xml'
