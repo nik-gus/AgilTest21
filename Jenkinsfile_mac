@@ -13,14 +13,11 @@ pipeline {
         stage ('Build') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-                    sh '''
-                        mvn clean install
-                        mvn clean install -DWebDriver=Firefox
-                    '''
+                    sh 'mvn clean install'
                 }
             }
         }
     }
-    }
+}
      
  
