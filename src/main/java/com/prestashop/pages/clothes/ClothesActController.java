@@ -20,6 +20,20 @@ public class ClothesActController {
         return getCommonVerification();
     }
 
+    private void clickStaleElement(By element) {
+        var attempts = 0;
+        while(attempts < 2) {
+            try {
+                driver.findElement(element).click();
+                break;
+            } catch(StaleElementReferenceException e) {
+                e.printStackTrace();
+            }
+            attempts++;
+        }
+
+    }
+
     public ClothesActController selectMen() {
         driver.findElement(By.partialLinkText("Men"))
                 .click();
@@ -100,30 +114,12 @@ public class ClothesActController {
     }
 
     public ClothesActController chooseColor(Color color) {
-        var attempts = 0;
-        while(attempts < 2) {
-            try {
-                driver.findElement(clothingColor(color)).click();
-                break;
-            } catch(StaleElementReferenceException e) {
-                e.printStackTrace();
-            }
-            attempts++;
-        }
-        return this;
+      clickStaleElement(clothingColor(color));
+      return this;
     }
 
     public ClothesActController addToCart() {
-        var attempts = 0;
-        while (attempts < 2) {
-            try {
-                driver.findElement(addToCartButton()).click();
-                break;
-            } catch (StaleElementReferenceException e) {
-                e.printStackTrace();
-            }
-            attempts++;
-        }
+        clickStaleElement(addToCartButton());
         return this;
     }
 
