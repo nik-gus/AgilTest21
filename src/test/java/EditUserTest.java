@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.pages.user.UserPage.getUserPage;
+import static com.prestashop.utils.TestDataGenerator.*;
 
 class EditUserTest extends BaseTestClass{
 
@@ -24,7 +25,7 @@ class EditUserTest extends BaseTestClass{
         user.act()
                 .clickOnAddressesLink()
                 .clickOnUpdateLink()
-                .changeAddress1("Testgatan 12")
+                .changeAddress1(generateAddress())
                 .clickOnSaveButton();
         user.verify()
                 .addressUpdated();
