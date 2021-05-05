@@ -17,7 +17,7 @@ class SortAccessoriesTest extends BaseTestClass{
         top.act()
                 .selectAccessories()
                 .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyPageTitle("Accessories");
         accessories.act()
                 .clickRelevenceButton()
                 .clickLowToHigh();
@@ -31,7 +31,7 @@ class SortAccessoriesTest extends BaseTestClass{
         top.act()
                 .selectAccessories()
                 .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyPageTitle("Accessories");
         accessories.act()
                 .clickRelevenceButton()
                 .clickHighToLow();
@@ -45,15 +45,12 @@ class SortAccessoriesTest extends BaseTestClass{
         top.act()
                 .selectAccessories()
                 .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyPageTitle("Accessories");
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameAToZ();
         accessories.verify()
                 .verifyATOZ();
-
-
-
     }
 
     @Test
@@ -62,7 +59,7 @@ class SortAccessoriesTest extends BaseTestClass{
         top.act()
                 .selectAccessories()
                 .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyPageTitle("Accessories");
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameZToA();

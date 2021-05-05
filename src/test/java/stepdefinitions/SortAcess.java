@@ -43,7 +43,7 @@ public class SortAcess {
         top.act()
                 .selectAccessories()
                 .andThen()
-                .verifyAccessoriesPage("Accessories");
+                .verifyPageTitle("Accessories");
     }
     @When(": User chooses to sort products by A To Z")
     public void user_chooses_to_sort_products_by_a_to_z() {
