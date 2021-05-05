@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage ('Build') {
            steps {
-               bat ''''
+               bat '''
                     mvn clean install -WebDriver=Chrome
                     mvn clean install -WebDriver=Firefox
                     '''
