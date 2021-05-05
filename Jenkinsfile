@@ -15,12 +15,12 @@ pipeline {
     stages {
         stage('Build - Chrome') {
             steps {
-                bat 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Chrome -Dmaven.test.failure.ignore=true'
+                bat 'mvn clean install -DWebDriver=Chrome -Dmaven.test.failure.ignore=true'
             }
         }
         stage('Build - Firefox') {
             steps {
-                bat 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Firefox -Dmaven.test.failure.ignore=true'
+                bat 'mvn clean install -DWebDriver=Firefox -Dmaven.test.failure.ignore=true'
             }
         }
 
