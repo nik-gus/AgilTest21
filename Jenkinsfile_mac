@@ -12,25 +12,32 @@ pipeline {
     options { timestamps () }
     
     stages {
-        stage ('Build') {
+        stage ('Build - Chrome') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-                    sh 'mvn clean install -Dtest=CheckOutAndPayTest'
+                    sh 'mvn clean install -DWebDriver=Chrome'
+                }
+            }
+        }
+        stage ('Build - Firefox') {
+            steps {
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
+                    sh 'mvn clean install -DWebDriver=Firefox'
                 }
             }
         }
     }
 
-    post {
-        always {
-            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
-                    body: 'Please go to ${BUILD_URL} and verify the build',
-                    attachLog: true,
-                    compressLog: true,
-                    recipientProviders: [upstreamDevelopers()],
-                    to: 'nikgus@icloud.com'
-        }
-    }
+//    post {
+//        always {
+//            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
+//                    body: 'Please go to ${BUILD_URL} and verify the build',
+//                    attachLog: true,
+//                    compressLog: true,
+//                    recipientProviders: [upstreamDevelopers()],
+//                    to: 'nikgus@icloud.com'
+//        }
+//    }
 }
      
  
