@@ -13,13 +13,6 @@ pipeline {
     //options {timestamps()}
     
     stages {
-//        stage ('Build') {
-//           steps {
-//               bat '''
-//                    mvn clean install -Dtest=LogInTest -DWebDriver=Chrome
-//                    mvn clean install -Dtest=LogInTest -DWebDriver=Firefox
-//                    '''
-//           }
         stage ('Build - Chrome') {
             steps {
                     bat 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Chrome'
