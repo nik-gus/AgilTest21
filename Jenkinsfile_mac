@@ -3,7 +3,7 @@ pipeline {
     label 'mac'
     }
 
-    triggers { pollSCM('*/5 * * * *') }
+    triggers { pollSCM('H * * * *') }
 
     tools {
         maven 'M3'
