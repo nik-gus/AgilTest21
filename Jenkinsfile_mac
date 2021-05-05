@@ -15,14 +15,14 @@ pipeline {
         stage ('Build - Chrome') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-                    sh 'mvn clean install -DWebDriver=Chrome'
+                    sh 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Chrome'
                 }
             }
         }
         stage ('Build - Firefox') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -DWebDriver=Firefox'
+                    sh 'mvn clean install -Dtest=CheckOutAndPayTest -DWebDriver=Firefox'
                 }
             }
         }
