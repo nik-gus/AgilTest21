@@ -54,7 +54,7 @@ class CheckOutAndPayTest extends BaseTestClass {
                 .agreeToTermsAndConditions()
                 .continueToAdresses()
                 .enterAddress(generateAddress())
-                .enterPostalCode("123 45") //TODO: hard coded...
+                .enterPostalCode("123 78") //TODO: hard coded...
                 .enterCity(generateCity())
                 .continueToShipping()
                 //default shipping

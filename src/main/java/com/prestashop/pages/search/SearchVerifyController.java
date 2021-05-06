@@ -12,7 +12,8 @@ public class SearchVerifyController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
-    public SearchVerifyController verifyItem(){
+    public SearchVerifyController verifyItem(String item){
+        assertTrue(driver.getCurrentUrl().contains(item));
         String product = driver.findElement(By.id("products")).getText();
         if (product.contains("There")){
             assertTrue(product.contains("There"));

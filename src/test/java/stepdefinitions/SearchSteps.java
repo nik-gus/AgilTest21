@@ -33,9 +33,9 @@ public class SearchSteps {
                 .clickSearch();
     }
 
-    @Then("^item will be searched$")
-    public void ItemIsSearched(){
+    @Then("^(.*) will be searched$")
+    public void ItemIsSearched(String item){
         search.verify()
-                .verifyItem();
+                .verifyItem(item);
     }
 }
