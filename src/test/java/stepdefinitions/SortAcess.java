@@ -50,6 +50,8 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameAToZ();
+        accessories.verify()
+                .verifyATOZ();
     }
     @Then("Success message is displayed")
     public void success_message_is_displayed() {
@@ -62,6 +64,8 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameZToA();
+        accessories.verify()
+                .verifyZTOA();
     }
 
 
@@ -70,6 +74,8 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickLowToHigh();
+        accessories.verify()
+                .verifyLowToHigh();
     }
 
     @When(": User chooses to sort products by High To Low")
@@ -77,5 +83,7 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickHighToLow();
+        accessories.verify()
+                .verifyHighToLow();
     }
 }

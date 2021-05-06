@@ -48,4 +48,72 @@ public class AccessoriesActController {
         return this;
     }
 
+    public AccessoriesActController filterByHome() {
+        driver.findElements(By.className("ps-shown-by-js")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByStationery() {
+        driver.findElements(By.className("ps-shown-by-js")).get(1)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByColourWhite() {
+        driver.findElements(By.className("color")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByColourBlack() {
+        driver.findElements(By.className("color")).get(1)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByCeramic() {
+        driver.findElements(By.partialLinkText("Ceramic")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByPolyester() {
+        driver.findElements(By.partialLinkText("Polyester")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByRecycle() {
+        driver.findElements(By.partialLinkText("Recycled cardboard")).get(0)
+                .click();
+        return this;
+    }
+
+
+    public AccessoriesActController filterByProperty120Pages() {
+        driver.findElements(By.partialLinkText("120 pages")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByPropertyRemovable() {
+        driver.findElements(By.partialLinkText("Removable cover")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByPropertyByBrandGraphic() {
+        driver.findElements(By.partialLinkText("Graphic Corner")).get(0)
+                .click();
+        return this;
+    }
+
+    public AccessoriesActController filterByPropertyByBrandStudio() {
+        driver.findElements(By.partialLinkText("Studio Design")).get(0)
+                .click();
+        return this;
+    }
+
+
 }
