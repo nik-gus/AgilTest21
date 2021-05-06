@@ -58,6 +58,20 @@ public class ClothesVerifyController {
         return this;
     }
 
+    public ClothesVerifyController verifyWomen(){
+        driver.findElement(By.partialLinkText("Women"));
+        wait.until(ExpectedConditions.urlContains("5-women"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/5-women");
+        return this;
+    }
+
+    public ClothesVerifyController verifyMen(){
+        driver.findElement(By.partialLinkText("Men"));
+        wait.until(ExpectedConditions.urlContains("4-men"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men");
+        return this;
+    }
+
     public ClothesVerifyController verifyHummingbirdResults(){
         driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Hummingbird"));
