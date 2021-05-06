@@ -42,7 +42,7 @@ public class SortAcess {
     public void user_is_on_accessories_page() {
         top.act()
                 .selectAccessories()
-                .andThen()
+                    .andThen()
                 .verifyPageTitle("Accessories");
     }
     @When(": User chooses to sort products by A To Z")
@@ -50,7 +50,6 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameAToZ();
-
     }
 
     @Then("Success message is displayed When A TO Z is verified")
@@ -64,8 +63,8 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameZToA();
-
     }
+
     @Then("Success message is displayed When Z TO A is verified")
     public void successMessageIsDisplayedWhenZTOAIsVerified() {
         accessories.verify()

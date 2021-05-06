@@ -9,7 +9,6 @@ Feature: Sort Accessories
       When  : User chooses to sort products by Z To A
       Then Success message is displayed When Z TO A is verified
 
-
   Scenario: User sorts Accessories by price Low To High
     Given : User is on Accessories page
     When  : User chooses to sort products by Low To High

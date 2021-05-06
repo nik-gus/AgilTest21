@@ -16,7 +16,7 @@ public class AccessoriesVerifyController {
     private WebDriverWait wait = getWebDriverWait();
 
     public AccessoriesVerifyController verifyLowToHigh() {
-        driver.findElement(By.className("js-search-link"));
+//        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("6-accessories?order=product.price.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.price.asc");
         return this;
@@ -24,7 +24,7 @@ public class AccessoriesVerifyController {
 
 
     public AccessoriesVerifyController verifyHighToLow() {
-        driver.findElement(By.className("js-search-link"));
+//        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.price.desc");
 
@@ -32,7 +32,7 @@ public class AccessoriesVerifyController {
     }
 
     public AccessoriesVerifyController verifyATOZ() {
-        driver.findElement(By.className("js-search-link")).getAttribute("Name, A to Z");
+//        driver.findElement(By.className("js-search-link")).getAttribute("Name, A to Z");
         wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.name.asc");
         return this;
@@ -40,76 +40,76 @@ public class AccessoriesVerifyController {
     }
 
     public AccessoriesVerifyController verifyZTOA(){
-        driver.findElement(By.className("js-search-link"));
+//        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?order=product.name.desc");
         return this;
     }
 
     public AccessoriesVerifyController verifyMugResults(){
-        driver.findElement(By.className("h2"));
+//        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Mug"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Mug");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByHome(){
-        driver.findElements(By.className("ps-shown-by-js")).get(0);
+//        driver.findElements(By.className("ps-shown-by-js")).get(0);
         wait.until(ExpectedConditions.urlContains("Home+Accessories"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Categories-Home+Accessories");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByStationery(){
-        driver.findElements(By.className("ps-shown-by-js")).get(0);
+//        driver.findElements(By.className("ps-shown-by-js")).get(0);
         wait.until(ExpectedConditions.urlContains("Stationery"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Categories-Stationery");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByColourWhite(){
-        driver.findElements(By.className("color")).get(0);
+//        driver.findElements(By.className("color")).get(0);
         wait.until(ExpectedConditions.urlContains("Color-White"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Color-White");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByColourBlack(){
-        driver.findElements(By.className("color")).get(1);
+//        driver.findElements(By.className("color")).get(1);
         wait.until(ExpectedConditions.urlContains("Color-Black"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Color-Black");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByCeramic(){
-        driver.findElements(By.partialLinkText("Ceramic"));
+//        driver.findElements(By.partialLinkText("Ceramic"));
         wait.until(ExpectedConditions.urlContains("Composition-Ceramic"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Composition-Ceramic");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByPolyester(){
-        driver.findElements(By.partialLinkText("Polyester"));
+//        driver.findElements(By.partialLinkText("Polyester"));
         wait.until(ExpectedConditions.urlContains("Composition-Polyester"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Composition-Polyester");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByRecycle(){
-        driver.findElements(By.partialLinkText("Recycled cardboard"));
+//        driver.findElements(By.partialLinkText("Recycled cardboard"));
         wait.until(ExpectedConditions.urlContains("Recycled+cardboard"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Composition-Recycled+cardboard");
         return this;
     }
     public AccessoriesVerifyController verifyCategoryBy120Pages(){
-        driver.findElements(By.partialLinkText("120 pages"));
+//        driver.findElements(By.partialLinkText("120 pages"));
         wait.until(ExpectedConditions.urlContains("Property-120+pages"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Property-120+pages");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByRemovable(){
-        driver.findElements(By.partialLinkText("Removable cover"));
+//        driver.findElements(By.partialLinkText("Removable cover"));
         wait.until(ExpectedConditions.urlContains("Property-Removable+cover"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Property-Removable+cover");
         return this;
@@ -117,16 +117,17 @@ public class AccessoriesVerifyController {
 
 
     public AccessoriesVerifyController verifyCategoryByBrandGraphic(){
-        driver.findElements(By.partialLinkText("Graphic Corner"));
+//        driver.findElements(By.partialLinkText("Graphic Corner"));
         wait.until(ExpectedConditions.urlContains("Brand-Graphic+Corner"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Brand-Graphic+Corner");
         return this;
     }
 
     public AccessoriesVerifyController verifyCategoryByBrandStudio(){
-        driver.findElements(By.partialLinkText("Studio Design"));
+//        driver.findElements(By.partialLinkText("Studio Design"));
         wait.until(ExpectedConditions.urlContains("Brand-Studio+Design"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Brand-Studio+Design");
         return this;
     }
+
 }
