@@ -28,21 +28,26 @@ pipeline {
         }
     }
     post {
-        success {
-            junit 'target/surefire-reports/**/*.xml'
+        always {
+            junit 'target/surefire-reports/**/*.html'
         }
+        success {
+            archiveArtifacts artifacts: '**/target/*.jar'
+        }
+        changed {
+            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
+                    body: 'Please go to ${BUILD_URL} and verify the build',
+                    attachLog: true,
+                    compressLog: true,
+                    recipientProviders: [upstreamDevelopers()],
+                    to: 'nikgus@icloud.com'
+        }
+        failure {
+            echo 'The build failed'
+        }
+
     }
 
-//    post {
-//        always {
-//            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
-//                    body: 'Please go to ${BUILD_URL} and verify the build',
-//                    attachLog: true,
-//                    compressLog: true,
-//                    recipientProviders: [upstreamDevelopers()],
-//                    to: 'nikgus@icloud.com'
-//        }
-//    }
 }
      
  
