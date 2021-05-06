@@ -1,9 +1,6 @@
 package stepdefinitions;
 
 import com.prestashop.pages.authentication.AuthPage;
-import com.prestashop.pages.cart.CartPage;
-import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,15 +10,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.prestashop.pages.cart.CartPage.getCartPage;
-import static com.prestashop.pages.clothes.ClothesPage.getClothesPage;
-import static com.prestashop.pages.order.OrderPage.URL_PATH_ORDER;
-import static com.prestashop.pages.order.OrderPage.getOrderPage;
-import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
-import static com.prestashop.utils.TestDataGenerator.generateFirstName;
-import static com.prestashop.utils.TestDataGenerator.generateLastName;
 
 public class CorrectUserSteps {
 
@@ -45,7 +35,6 @@ public class CorrectUserSteps {
 
     @Given("User is on homepage")
     public void UserHomePage() {
-
         top.act()
                 .selectSignInButton();
 
@@ -53,8 +42,6 @@ public class CorrectUserSteps {
 
     @When("User input valid information")
     public void CreateUser() {
-
-
         authPage.act()
                 .selectCreateAccountLink()
                 .selectSocialTitleMrs()
@@ -67,14 +54,12 @@ public class CorrectUserSteps {
                 .subscribeToNewsletter()
                 .agreeToTerms()
                 .saveAccount();
-
     }
 
     @Then("User should be logged in")
     public void UserLoggedIn() {
-
         top.verify()
                 .userLoggedIn("Kalle Andersson");
-
     }
+
 }

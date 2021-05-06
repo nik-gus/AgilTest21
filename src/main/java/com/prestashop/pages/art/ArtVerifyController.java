@@ -18,16 +18,13 @@ public class ArtVerifyController {
 
 
     public ArtVerifyController verifyPackResults(){
-        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Pack"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Pack");
         return this;
-
     }
 
 
     public ArtVerifyController verifyPaperResults(){
-        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Paper"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Paper");
         return this;
@@ -35,7 +32,6 @@ public class ArtVerifyController {
     }
 
     public ArtVerifyController verifyColourResults(){
-        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Colour"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Colour");
         return this;
@@ -43,7 +39,6 @@ public class ArtVerifyController {
     }
 
     public ArtVerifyController verifyCeramicsResults(){
-        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Ceramics"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Ceramics");
         return this;
@@ -64,34 +59,27 @@ public class ArtVerifyController {
 
 
     public ArtVerifyController verifySortAToZPage(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("product.name.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.asc");
         return this;
     }
 
     public ArtVerifyController verifySortZToAPage(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("product.name.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.desc");
         return this;
     }
 
     public ArtVerifyController verifySortLowToHighPricePage(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("product.price.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.asc");
         return this;
     }
 
     public ArtVerifyController verifySortHighToLowPricePage(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.desc");
         return this;
     }
-
-
-
 
 }

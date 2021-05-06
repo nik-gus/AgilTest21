@@ -6,12 +6,9 @@ import org.junit.jupiter.api.Test;
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class filterAccessoriesTest extends BaseTestClass{
-
-
+class FilterAccessoriesTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
-
 
     @Test
     @Description("As a User i would like to test Filter option in Accessories, so that I can filter Accessories by Category Home")

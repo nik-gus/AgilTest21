@@ -24,56 +24,48 @@ public class ClothesVerifyController {
     }
 
     public ClothesVerifyController subPageMen() { //verifierar ny sida "Men", ej filter
-        driver.findElement(By.partialLinkText("Men"));
         wait.until(ExpectedConditions.urlContains("4-men"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men");
         return this;
     }
 
     public ClothesVerifyController productsIsSortedByPriceLowToHigh() {
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.price.asc");
         return this;
     }
 
     public ClothesVerifyController productsIsSortedByPriceHighToLow(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.price.desc");
         return this;
 
     }
     public ClothesVerifyController productsIsSortedByNameAToZ(){
-        driver.findElement(By.className("js-search-link")).getAttribute("Name, A to Z");
         wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.asc");
         return this;
     }
 
     public ClothesVerifyController productsIsSortedByNameZToA(){
-        driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.desc");
         return this;
     }
 
     public ClothesVerifyController verifyWomen(){
-        driver.findElement(By.partialLinkText("Women"));
         wait.until(ExpectedConditions.urlContains("5-women"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/5-women");
         return this;
     }
 
     public ClothesVerifyController verifyMen(){
-        driver.findElement(By.partialLinkText("Men"));
         wait.until(ExpectedConditions.urlContains("4-men"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men");
         return this;
     }
 
     public ClothesVerifyController verifyHummingbirdResults(){
-        driver.findElement(By.className("h2"));
         wait.until(ExpectedConditions.urlContains("search&s=Hummingbird"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Hummingbird");
         return this;
