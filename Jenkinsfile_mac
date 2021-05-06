@@ -15,21 +15,21 @@ pipeline {
         stage('Build - Chrome') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -Dmaven.test.failure.ignore=true -DWebDriver=Chrome'
+                    sh 'mvn clean install -Dtest=LogInTest -Dmaven.test.failure.ignore=true -DWebDriver=Chrome'
                 }
             }
         }
         stage('Build - Firefox') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -Dmaven.test.failure.ignore=true -DWebDriver=Firefox'
+                    sh 'mvn clean install -Dtest=LogInTest -Dmaven.test.failure.ignore=true -DWebDriver=Firefox'
                 }
             }
         }
     }
     post {
         always {
-            junit 'target/surefire-reports/**/*.html'
+            junit 'target/surefire-reports/*.xml'
         }
         success {
             archiveArtifacts artifacts: '**/target/*.jar'

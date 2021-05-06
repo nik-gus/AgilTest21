@@ -49,7 +49,7 @@ public class AuthVerifyController {
 
     public AuthVerifyController shortPasswordFailed() {
         WebElement alert = driver.findElement(shortPasswordMessage());
-        assertFalse(alert.getAttribute("validationMessage").isEmpty());
+        assertTrue(alert.getAttribute("validationMessage").contains("Please match"));
         return this;
     }
 
@@ -77,13 +77,13 @@ public class AuthVerifyController {
         if(password.isEmpty()){
             alert = driver.findElement(By.name("password"));
         }
-        assertFalse(alert.getAttribute("validationMessage").isEmpty());
+        assertTrue(alert.getAttribute("validationMessage").contains("Please fill"));
         return this;
     }
 
     public AuthVerifyController notAgreeFailed() {
         WebElement alert = driver.findElement(notAgreeMessage());
-        assertFalse(alert.getAttribute("validationMessage").isEmpty());
+        assertTrue(alert.getAttribute("validationMessage").contains("Please"));
         return this;
     }
 

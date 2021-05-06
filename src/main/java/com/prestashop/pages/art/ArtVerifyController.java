@@ -62,4 +62,36 @@ public class ArtVerifyController {
         return this;
     }
 
+
+    public ArtVerifyController verifySortAToZPage(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("product.name.asc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.asc");
+        return this;
+    }
+
+    public ArtVerifyController verifySortZToAPage(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("product.name.desc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.desc");
+        return this;
+    }
+
+    public ArtVerifyController verifySortLowToHighPricePage(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("product.price.asc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.asc");
+        return this;
+    }
+
+    public ArtVerifyController verifySortHighToLowPricePage(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("product.price.desc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.desc");
+        return this;
+    }
+
+
+
+
 }
