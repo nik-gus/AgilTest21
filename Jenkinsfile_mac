@@ -30,7 +30,7 @@ pipeline {
     post {
         always {
             junit skipPublishingChecks: true,
-                    testResults: 'target/surefire-reports/*.xml'
+                    testResults: 'target/surefire-reports/**/*.xml'
         }
         success {
             archiveArtifacts artifacts: '**/target/*.jar'
