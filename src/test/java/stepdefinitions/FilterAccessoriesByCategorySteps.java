@@ -1,21 +1,13 @@
 package stepdefinitions;
 
 import com.prestashop.pages.accessories.AccessoriesPage;
-import com.prestashop.pages.cart.CartPage;
-import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
-import static com.prestashop.pages.cart.CartPage.getCartPage;
-import static com.prestashop.pages.order.OrderPage.getOrderPage;
 
 public class FilterAccessoriesByCategorySteps {
-
     TopMenu top = TopMenu.getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
 
