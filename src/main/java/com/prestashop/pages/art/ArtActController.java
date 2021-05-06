@@ -24,6 +24,39 @@ public class ArtActController {
         return this;
     }
 
+    public ArtActController selectSortArtFromAtoZ() {
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/button"))
+                .click();
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/div/a[2]"))
+                .click();
+        return this;
+    }
+
+    public ArtActController selectSortArtFromZtoA() {
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/button"))
+                .click();
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/div/a[3]"))
+                .click();
+        return this;
+    }
+
+    public ArtActController selectSortArtFromLowToHighPrice() {
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/button"))
+                .click();
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/div/a[4]"))
+                .click();
+        return this;
+    }
+
+    public ArtActController selectSortArtFromHighToLowPrice() {
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/button"))
+                .click();
+        driver.findElement(By.xpath("/html/body/main/section/div/div[2]/section/section/div[1]/div/div[2]/div/div[1]/div/a[5]"))
+                .click();
+        return this;
+    }
+
+
     public ArtActController selectFilter(String filter) {
         WebElement filterElement = driver.findElement(By.partialLinkText(filter));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
