@@ -50,13 +50,13 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameAToZ();
+
+    }
+
+    @Then("Success message is displayed When A TO Z is verified")
+    public void successMessageIsDisplayedWhenATOZIsVerified() {
         accessories.verify()
                 .verifyATOZ();
-    }
-    @Then("Success message is displayed")
-    public void success_message_is_displayed() {
-        System.out.println("Sorted is successfull");
-
     }
 
     @When(": User chooses to sort products by Z To A")
@@ -64,18 +64,20 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickNameZToA();
+
+    }
+    @Then("Success message is displayed When Z TO A is verified")
+    public void successMessageIsDisplayedWhenZTOAIsVerified() {
         accessories.verify()
                 .verifyZTOA();
     }
-
 
     @When(": User chooses to sort products by Low To High")
     public void userChoosesToSortProductsByLowToHigh() {
         accessories.act()
                 .clickRelevenceButton()
                 .clickLowToHigh();
-        accessories.verify()
-                .verifyLowToHigh();
+
     }
 
     @When(": User chooses to sort products by High To Low")
@@ -83,6 +85,17 @@ public class SortAcess {
         accessories.act()
                 .clickRelevenceButton()
                 .clickHighToLow();
+
+    }
+
+    @Then("Success message is displayed When Low To High is verified")
+    public void successMessageIsDisplayedWhenLowToHighIsVerified() {
+        accessories.verify()
+                .verifyLowToHigh();
+    }
+
+    @Then("Success message is displayed When High To Low is verified")
+    public void successMessageIsDisplayedWhenHighToLowIsVerified() {
         accessories.verify()
                 .verifyHighToLow();
     }
