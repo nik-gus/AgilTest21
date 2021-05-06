@@ -22,7 +22,7 @@ pipeline {
         stage('Build - Firefox') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -test=LogInTest -Dmaven.test.failure.ignore=true -DWebDriver=Firefox'
+                    sh 'mvn clean install -Dtest=LogInTest -Dmaven.test.failure.ignore=true -DWebDriver=Firefox'
                 }
             }
         }
