@@ -12,7 +12,8 @@ import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 class FilterClothesByCategoryTest extends BaseTestClass {
 
-
+    /*
+    //The code does not verify anything
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();
 
@@ -33,6 +34,6 @@ class FilterClothesByCategoryTest extends BaseTestClass {
                 .selectMen();
     }
 
-
+    */
 }
 
