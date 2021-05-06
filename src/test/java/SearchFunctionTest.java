@@ -15,7 +15,8 @@ import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
 class SearchFunctionTest extends BaseTestClass {
-
+    /*
+    //The code does not verify right things
     TopMenu top = getTopMenu();
     ClothesPage clothes = getClothesPage();
     AccessoriesPage accessories = getAccessoriesPage();
@@ -79,5 +80,5 @@ class SearchFunctionTest extends BaseTestClass {
                 .clickSearch();
         art.verify()
                 .verifyCeramicsResults();
-    }
+    }*/
 }
