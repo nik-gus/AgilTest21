@@ -15,7 +15,7 @@ import static com.prestashop.pages.cart.CartPage.getCartPage;
 import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-public class FilterArtByCategory {
+public class FilterAccessoriesByCategorySteps {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
