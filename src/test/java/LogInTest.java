@@ -20,7 +20,7 @@ class LogInTest extends BaseTestClass {
                 .enterPassword("tolvan1")
                 .signIn();
         top.verify()
-                .userLoggedIn("tttttolvan tolvansson");
+                .userLoggedIn("tolvan tolvansson");
     }
 
 }
