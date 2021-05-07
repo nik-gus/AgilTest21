@@ -1,5 +1,4 @@
 import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.clothes.Size;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;
 
