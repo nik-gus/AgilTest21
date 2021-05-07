@@ -39,12 +39,12 @@ pipeline {
             echo 'The build status has changed'
         }
         failure {
-            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input',
+            emailext subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) has failed!',
                     body: 'Please go to ${BUILD_URL} and verify the build',
                     attachLog: true,
                     compressLog: false,
-                    recipientProviders: [upstreamDevelopers()],
-                    to: 'nikgus@icloud.com'
+                    recipientProviders: [upstreamDevelopers(), brokenBuildSuspects()]
+//                    to: 'nikgus@icloud.com'
         }
 
     }
