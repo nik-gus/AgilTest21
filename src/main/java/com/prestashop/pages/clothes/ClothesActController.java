@@ -75,6 +75,22 @@ public class ClothesActController {
                 .click();
         return this;
     }
+    public ClothesActController filterSizeByMedium(){
+        driver.findElement(sizeMediumFilter())
+                .click();
+        return this;
+    }
+    public ClothesActController filterSizeByLarge(){
+        driver.findElement(sizeLargeFilter())
+                .click();
+        return this;
+    }
+    public ClothesActController filterByColourWhite(){
+        driver.findElement(ColorWhiteFilter())
+                .click();
+        return this;
+    }
+
 
     public ClothesActController clickRelevenceButton() {
         driver.findElement(By.className("products-sort-order"))
