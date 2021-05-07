@@ -15,14 +15,14 @@ pipeline {
         stage('Build - Chrome') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -Dtest=LogInTest -Dmaven.test.failure.ignore=true'
+                    sh 'mvn clean install -Dtest=LogInTest'
                 }
             }
         }
         stage('Build - Firefox') {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    sh 'mvn clean install -Dtest=LogInTest -DWebDriver=Firefox -Dmaven.test.failure.ignore=true'
+                    sh 'mvn clean install -Dtest=LogInTest -DWebDriver=Firefox'
                 }
             }
         }
