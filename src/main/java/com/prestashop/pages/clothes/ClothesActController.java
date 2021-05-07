@@ -70,9 +70,10 @@ public class ClothesActController {
         return this;
     }
 
-    public ClothesActController filterSize(Size size) {
-        driver.findElement(By.xpath("//a[@class='_gray-darker search-link js-search-link'][contains(text(),'" + size + "')]"))
-                .click();
+    public ClothesActController filterSize(String size) {
+        clickStaleElement(By.xpath("//a[@class='_gray-darker search-link js-search-link'][contains(text(),'" + size + "')]"));
+        wait.until(ExpectedConditions.urlContains("-" + size));
+
         return this;
     }
     public ClothesActController filterSizeByMedium(){
