@@ -26,6 +26,11 @@ public class SearchSteps {
         driver.get("http://40.76.27.113:8085/en/");
     }
 
+    @Given("user is on homepage")
+    public void UserOnHomePage(){
+
+    }
+
     @When("^user search (.*)$")
     public void UserSearchItem(String item){
         search.act()
@@ -33,9 +38,9 @@ public class SearchSteps {
                 .clickSearch();
     }
 
-    @Then("^(.*) will be searched$")
-    public void ItemIsSearched(String item){
+    @Then("^(.*) will be searched with (.*)$")
+    public void ItemIsSearched(String item, String result){
         search.verify()
-                .verifyItem(item);
+                .verifyItem(item, result);
     }
 }
