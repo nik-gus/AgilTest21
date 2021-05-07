@@ -43,8 +43,8 @@ pipeline {
                     body: 'Please go to ${BUILD_URL} and verify the build',
                     attachLog: true,
                     compressLog: false,
-                    recipientProviders: [upstreamDevelopers(), brokenBuildSuspects()]
-//                    to: 'nikgus@icloud.com'
+                    recipientProviders: [upstreamDevelopers(), brokenBuildSuspects()],
+                    to: '732a5325.iths.se@emea.teams.ms'
         }
 
     }
