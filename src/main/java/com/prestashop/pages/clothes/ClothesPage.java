@@ -44,9 +44,12 @@ public class ClothesPage {
     public static By menBreadcrumb() {
         return By.xpath("//span[contains(text(),'Men')]");
     }
-    public static By sizeMFilter() {
-        return By.cssSelector("#js-active-search-filters > ul > li");
-    }
+    public static By sizeMediumFilter() { return By.id("facet_input_77092_1");}
+    public static By sizeLargeFilter() { return By.cssSelector("#facet_3289 > li:nth-child(3) > label > a");}
+    public static By ColorWhiteFilter(){return By.xpath("//*[@id=\"facet_84439\"]/li[1]/label/span");}
+
+
+
 
     public static By articleByOrderOfAppearance(int order) {
         return By.cssSelector("[data-id-product='" + order +"']");
