@@ -1,12 +1,11 @@
 Feature: Filter feature on Prestashop´s Clothes page
 
 @testing
-Scenario: Filter Clothes products by four filter options
+Scenario: Filter Clothes products by three filter options
   Given user is on Clothes page
-  When user filter by category Men
+  When user filter by Men
   And user filter by sizes M and L
-  And user filter by Colour White
-  Then products displayed are filtered by all four filter options
+  Then products displayed are filtered by all three filter options
 
   @testing
   Scenario: Filter Clothes by category man

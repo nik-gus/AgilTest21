@@ -1,10 +1,7 @@
 package stepdefinitions;
 
-import com.prestashop.pages.art.ArtPage;
 import com.prestashop.pages.clothes.ClothesPage;
-import com.prestashop.pages.clothes.Size;
 import com.prestashop.pages.top.TopMenu;
-import com.prestashop.utils.Color;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -30,57 +27,43 @@ public class FilterClothesSteps {
         wait = getWebDriverWait();
         driver.get("http://40.76.27.113:8085/en/");
     }
-/*
+
     @Given("^user is on Clothes page")
     public void userIsOnClothesPage() {
         top.act()
                 .selectClothes();
-
     }
-    @When("^user filter by category Men")
+
+    @When("^user filter by Men")
     public void userFilterByCategoryMen(){
         clothes.act()
                 .selectMen();
-
     }
+
     @When("^user filter by sizes M and L")
     public void userFilterBySizes() {
         clothes.act()
-                .filterSizeByMedium();
-
-    }
-    @When("^user filter by Colour White")
-    public void userFilterByColourWhite() {
-        clothes.act()
-                .filterByColourWhite();
-
-    }
-    @Then("^products displayed are filtered by all four filter options")
-    public void products_displayed_are_filtered_by_all_four_filter_options() {
-
-    }
-*/
-
-    @Given("^user is on Clothes page")
-    public void userIsOnClothesPage() {
-        top.act()
-                .selectClothes();
+                .filterSize("M")
+                .filterSize("L");
     }
 
-
+    @Then("^products displayed are filtered by all three filter options")
+    public void productsDisplayedAreFilteredByMenAndSizes() {
+    clothes.verify()
+            .verifyProductsAreFilteredBySizesForMen();
+    }
 
     @When("user filter by category Men")
     public void user_filter_by_category_men() {
         clothes.act()
                 .selectMen();
     }
+
     @Then("products displayed are filtered by men")
     public void products_displayed_are_filtered_by_men() {
         clothes.verify()
                 .verifyMen();
     }
-
-
 
     @When("user filter by category woman")
     public void user_filter_by_category_woman() {
