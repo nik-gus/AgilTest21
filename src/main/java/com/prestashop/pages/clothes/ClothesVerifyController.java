@@ -65,6 +65,38 @@ public class ClothesVerifyController {
         return this;
     }
 
+
+
+    public ClothesVerifyController verifyAllClothesLowToHigh() {
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("order=product.price.asc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/3-clothes?order=product.price.asc");
+        return this;
+    }
+
+    public ClothesVerifyController verifyAllClothesHighToLow(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/3-clothes?order=product.price.desc");
+        return this;
+
+    }
+    public ClothesVerifyController verifyAllClothesATOZ(){
+        driver.findElement(By.className("js-search-link")).getAttribute("Name, A to Z");
+        wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/3-clothes?order=product.name.asc");
+        return this;
+    }
+
+    public ClothesVerifyController verifyAllClothesZTOA(){
+        driver.findElement(By.className("js-search-link"));
+        wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/3-clothes?order=product.name.desc");
+        return this;
+    }
+
+
+
     public ClothesVerifyController verifyHummingbirdResults(){
         wait.until(ExpectedConditions.urlContains("search&s=Hummingbird"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Hummingbird");
