@@ -1,7 +1,9 @@
 package com.prestashop.pages.accessories;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.utils.DriverFactory.getDriver;
@@ -49,26 +51,34 @@ public class AccessoriesActController {
     }
 
     public AccessoriesActController filterByHome() {
-        driver.findElements(By.className("ps-shown-by-js")).get(0)
-                .click();
+        WebElement homeFilter =
+        driver.findElements(By.className("ps-shown-by-js")).get(0);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", homeFilter);
         return this;
     }
 
     public AccessoriesActController filterByStationery() {
-        driver.findElements(By.className("ps-shown-by-js")).get(1)
-                .click();
+        WebElement stationeryFilter =
+        driver.findElements(By.className("ps-shown-by-js")).get(1);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", stationeryFilter);
         return this;
     }
 
     public AccessoriesActController filterByColourWhite() {
-        driver.findElements(By.className("color")).get(0)
-                .click();
+        WebElement colorFilter =
+                driver.findElements(By.className("color")).get(0);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", colorFilter);
         return this;
     }
 
     public AccessoriesActController filterByColourBlack() {
-        driver.findElements(By.className("color")).get(1)
-                .click();
+        WebElement colorFilter =
+        driver.findElements(By.className("color")).get(1);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", colorFilter);
         return this;
     }
 
