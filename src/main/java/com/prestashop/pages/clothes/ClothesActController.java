@@ -73,7 +73,6 @@ public class ClothesActController {
     public ClothesActController filterSize(String size) {
         clickStaleElement(By.xpath("//a[@class='_gray-darker search-link js-search-link'][contains(text(),'" + size + "')]"));
         wait.until(ExpectedConditions.urlContains("-" + size));
-
         return this;
     }
 
