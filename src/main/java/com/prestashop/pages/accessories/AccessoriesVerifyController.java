@@ -1,6 +1,8 @@
 package com.prestashop.pages.accessories;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -52,6 +54,7 @@ public class AccessoriesVerifyController {
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Categories-Home+Accessories");
         return this;
     }
+
 
     public AccessoriesVerifyController verifyCategoryByStationery(){
         wait.until(ExpectedConditions.urlContains("Stationery"));
@@ -110,6 +113,95 @@ public class AccessoriesVerifyController {
     public AccessoriesVerifyController verifyCategoryByBrandStudio(){
         wait.until(ExpectedConditions.urlContains("Brand-Studio+Design"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/6-accessories?q=Brand-Studio+Design");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByfilterHome() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Categories: Home Accessories\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByfilterStationery() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Categories: Stationery\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterWhiteColour() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Color: White\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterBlackColour() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Color: Black\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterCeramic() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Composition: Ceramic\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterPolyester() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Composition: Polyester\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterRecycle() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Composition: Recycled cardboard\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilter120Pages() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Property: 120 pages\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterRemovable() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Property: Removable cover\n" +
+                "\uE5CD");
+        return this;
+    }
+
+
+    public AccessoriesVerifyController verifyByFilterBrandGraphic() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Brand: Graphic Corner\n" +
+                "\uE5CD");
+        return this;
+    }
+
+    public AccessoriesVerifyController verifyByFilterBrandStudio() {
+
+        String filter = driver.findElement(By.xpath("//*[@id='js-active-search-filters']/ul/li")).getText();
+        assertEquals(filter, "Brand: Studio Design\n" +
+                "\uE5CD");
         return this;
     }
 

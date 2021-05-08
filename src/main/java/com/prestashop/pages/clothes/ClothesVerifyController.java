@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import static com.prestashop.pages.clothes.ClothesPage.addedToCartConfirmationMessage;
 import static com.prestashop.utils.DriverFactory.getDriver;
@@ -66,7 +69,6 @@ public class ClothesVerifyController {
     }
 
 
-
     public ClothesVerifyController verifyAllClothesLowToHigh() {
         driver.findElement(By.className("js-search-link"));
         wait.until(ExpectedConditions.urlContains("order=product.price.asc"));
@@ -102,5 +104,74 @@ public class ClothesVerifyController {
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Hummingbird");
         return this;
     }
+
+    public ClothesVerifyController verifyDropDownPriceLowToHigh(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+       String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+       assertEquals(filter, "\n" +
+               "        Price, low to high\n" +
+               "      ");
+
+       return this;
+    }
+
+    public ClothesVerifyController verifyDropDownPriceHighToLow(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Price, high to low\n" +
+                "      ");
+
+        return this;
+    }
+
+    public ClothesVerifyController verifyDropDownAtoZ(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Name, A to Z\n" +
+                "      ");
+
+        return this;
+    }
+
+    public ClothesVerifyController verifyDropDownZtoA(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Name, Z to A\n" +
+                "      ");
+
+        return this;
+    }
+
+
+
+
+
 
 }

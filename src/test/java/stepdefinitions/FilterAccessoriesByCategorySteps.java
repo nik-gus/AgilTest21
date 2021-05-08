@@ -26,7 +26,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Home Filtered")
     public void successsMessageIsDisplayedFilterByHomeFiltered() {
         accessories.verify()
-                .verifyCategoryByHome();
+        .verifyByfilterHome().verifyCategoryByHome();
     }
 
     @When(": User chooses to filter by Stationery")
@@ -38,7 +38,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Stationery Filtered")
     public void successsMessageIsDisplayedFilterByStationeryFiltered() {
         accessories.verify()
-                .verifyCategoryByStationery();
+                .verifyByfilterStationery().verifyCategoryByStationery();
     }
 
     @When(": User chooses to filter by Colour Black")
@@ -50,7 +50,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Black Colour Filtered")
     public void successsMessageIsDisplayedFilterByBlackColourFiltered() {
         accessories.verify()
-                .verifyCategoryByColourBlack();
+        .verifyByFilterBlackColour().verifyCategoryByColourBlack();
     }
 
     @When(": User chooses to filter by Colour White")
@@ -62,7 +62,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by White Colour Filtered")
     public void successsMessageIsDisplayedFilterByWhiteColourFiltered() {
         accessories.verify()
-                .verifyCategoryByColourWhite();
+                .verifyByFilterWhiteColour().verifyCategoryByColourWhite();
     }
 
     @When(": User chooses to filter by Ceramic")
@@ -74,7 +74,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Ceramic Option Filtered")
     public void successsMessageIsDisplayedFilterByCeramicOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByCeramic();
+                .verifyByFilterCeramic().verifyCategoryByCeramic();
     }
 
     @When(": User chooses to filter by Polyester")
@@ -86,7 +86,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Polyester Option Filtered")
     public void successsMessageIsDisplayedFilterByPolyesterOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByPolyester();
+                .verifyCategoryByPolyester().verifyCategoryByPolyester();
     }
 
     @When(": User chooses to filter by Recycle")
@@ -98,7 +98,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Recycle Option Filtered")
     public void successsMessageIsDisplayedFilterByRecycleOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByRecycle();
+                .verifyByFilterRecycle().verifyCategoryByRecycle();
     }
 
     @When(": User chooses to filter by {int} pages")
@@ -110,7 +110,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by {int} Pages Option Filtered")
     public void successsMessageIsDisplayedFilterByPagesOptionFiltered(int arg0) {
         accessories.verify()
-                .verifyCategoryBy120Pages();
+                .verifyByFilter120Pages().verifyCategoryBy120Pages();
     }
 
     @When(": User chooses to filter by Removable")
@@ -122,7 +122,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Removable Option Filtered")
     public void successsMessageIsDisplayedFilterByRemovableOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByRemovable();
+                .verifyByFilterRemovable().verifyCategoryByRemovable();
     }
 
     @When(": User chooses to filter by Graphic")
@@ -134,7 +134,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Graphic Brand Option Filtered")
     public void successsMessageIsDisplayedFilterByGraphicBrandOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByBrandGraphic();
+                .verifyByFilterBrandGraphic().verifyCategoryByBrandGraphic();
     }
 
     @When(": User chooses to filter by Studio")
@@ -146,7 +146,7 @@ public class FilterAccessoriesByCategorySteps {
     @Then("Successs message is displayed Filter by Studio Brand Option Filtered")
     public void successsMessageIsDisplayedFilterByStudioBrandOptionFiltered() {
         accessories.verify()
-                .verifyCategoryByBrandStudio();
+                .verifyByFilterBrandStudio().verifyCategoryByBrandStudio();
     }
 
 }

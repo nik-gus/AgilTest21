@@ -19,7 +19,9 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByHome();
         accessories.verify()
+                .verifyByfilterHome()
                 .verifyCategoryByHome();
+
     }
 
     @Test
@@ -31,7 +33,10 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByStationery();
         accessories.verify()
+
+                .verifyByfilterStationery()
                 .verifyCategoryByStationery();
+
     }
 
 
@@ -43,6 +48,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByColourWhite();
         accessories.verify()
+                .verifyByFilterWhiteColour()
                 .verifyCategoryByColourWhite();
     }
 
@@ -54,6 +60,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByColourBlack();
         accessories.verify()
+                .verifyByFilterBlackColour()
                 .verifyCategoryByColourBlack();
     }
     @Test
@@ -64,6 +71,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByCeramic();
         accessories.verify()
+                .verifyByFilterCeramic()
                 .verifyCategoryByCeramic();
     }
     @Test
@@ -74,6 +82,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByPolyester();
         accessories.verify()
+                .verifyByFilterPolyester()
                 .verifyCategoryByPolyester();
 
     }
@@ -86,6 +95,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByRecycle();
         accessories.verify()
+                .verifyByFilterRecycle()
                 .verifyCategoryByRecycle();
 
     }
@@ -98,6 +108,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByProperty120Pages();
         accessories.verify()
+                .verifyByFilter120Pages()
                 .verifyCategoryBy120Pages();
 
     }
@@ -111,6 +122,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByPropertyRemovable();
         accessories.verify()
+                .verifyByFilterRemovable()
                 .verifyCategoryByRemovable();
 
     }
@@ -124,6 +136,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByPropertyByBrandGraphic();
         accessories.verify()
+                .verifyByFilterBrandGraphic()
                 .verifyCategoryByBrandGraphic();
 
     }
@@ -136,6 +149,7 @@ class FilterAccessoriesTest extends BaseTestClass{
         accessories.act()
                 .filterByPropertyByBrandStudio();
         accessories.verify()
+                .verifyByFilterBrandStudio()
                 .verifyCategoryByBrandStudio();
 
     }

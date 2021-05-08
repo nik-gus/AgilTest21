@@ -51,7 +51,7 @@ public class SortClothesSteps {
     @Then("the page of clothes sorted from A to Z appears")
     public void the_page_of_clothes_sorted_from_a_to_z_appears() {
 
-        clothes.verify().verifyAllClothesATOZ();
+        clothes.verify().verifyDropDownAtoZ().verifyAllClothesATOZ();
 
     }
 
@@ -65,7 +65,7 @@ public class SortClothesSteps {
     @Then("the page of clothes sorted from Z to A appears")
     public void the_page_of_clothes_sorted_from_z_to_a_appears() {
 
-        clothes.verify().verifyAllClothesZTOA();
+        clothes.verify().verifyDropDownZtoA().verifyAllClothesZTOA();
 
 
     }
@@ -79,19 +79,20 @@ public class SortClothesSteps {
     @Then("the page of clothes sorted from low to high price appears")
     public void the_page_of_clothes_sorted_from_low_to_high_price_appears() {
 
-        clothes.verify().verifyAllClothesLowToHigh();
+        clothes.verify().verifyDropDownPriceLowToHigh().verifyAllClothesLowToHigh();
 
     }
 
     @When("user choose sort on high to low price option for clothes")
     public void user_choose_sort_on_high_to_low_price_option_for_clothes() {
+
         clothes.act().clickRelevenceButton().clickHighToLow();
 
     }
     @Then("the page of clothes sorted from high to low price appears")
     public void the_page_of_clothes_sorted_from_high_to_low_price_appears() {
 
-        clothes.verify().verifyAllClothesHighToLow();
+        clothes.verify().verifyDropDownPriceHighToLow().verifyAllClothesHighToLow();
 
     }
 
