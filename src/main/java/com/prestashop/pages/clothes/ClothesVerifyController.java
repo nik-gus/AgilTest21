@@ -35,40 +35,49 @@ public class ClothesVerifyController {
         return this;
     }
 
-    public ClothesVerifyController productsIsSortedByPriceHighToLow(){
+    public ClothesVerifyController productsIsSortedByPriceHighToLow() {
         wait.until(ExpectedConditions.urlContains("order=product.price.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.price.desc");
         return this;
 
     }
-    public ClothesVerifyController productsIsSortedByNameAToZ(){
+
+    public ClothesVerifyController productsIsSortedByNameAToZ() {
         wait.until(ExpectedConditions.urlContains("order=product.name.asc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.asc");
         return this;
     }
 
-    public ClothesVerifyController productsIsSortedByNameZToA(){
+    public ClothesVerifyController productsIsSortedByNameZToA() {
         wait.until(ExpectedConditions.urlContains("order=product.name.desc"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?order=product.name.desc");
         return this;
     }
 
-    public ClothesVerifyController verifyWomen(){
+    public ClothesVerifyController verifyWomen() {
         wait.until(ExpectedConditions.urlContains("5-women"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/5-women");
         return this;
     }
 
-    public ClothesVerifyController verifyMen(){
+    public ClothesVerifyController verifyMen() {
         wait.until(ExpectedConditions.urlContains("4-men"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men");
         return this;
     }
 
-    public ClothesVerifyController verifyHummingbirdResults(){
+    public ClothesVerifyController verifyHummingbirdResults() {
         wait.until(ExpectedConditions.urlContains("search&s=Hummingbird"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Hummingbird");
         return this;
     }
+
+    public ClothesVerifyController verifyProductsAreFilteredBySizesForMen() {
+        wait.until(ExpectedConditions.urlContains("4-men?q=Size-M-L"));
+        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/4-men?q=Size-M-L");
+        return this;
+
+    }
+
 
 }
