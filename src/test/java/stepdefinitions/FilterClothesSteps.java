@@ -30,14 +30,14 @@ public class FilterClothesSteps {
         wait = getWebDriverWait();
         driver.get("http://40.76.27.113:8085/en/");
     }
-/*
+
     @Given("^user is on Clothes page")
     public void userIsOnClothesPage() {
         top.act()
                 .selectClothes();
 
     }
-    @When("^user filter by category Men")
+    @When("^user filter by Men")
     public void userFilterByCategoryMen(){
         clothes.act()
                 .selectMen();
@@ -46,26 +46,21 @@ public class FilterClothesSteps {
     @When("^user filter by sizes M and L")
     public void userFilterBySizes() {
         clothes.act()
-                .filterSizeByMedium();
+                .filterSize("M")
+                .filterSize("L");
 
     }
-    @When("^user filter by Colour White")
-    public void userFilterByColourWhite() {
-        clothes.act()
-                .filterByColourWhite();
+
+
+
+    @Then("^products displayed are filtered by all three filter options")
+    public void productsDisplayedAreFilteredByMenAndSizes() {
+    clothes.verify()
+            .verifyProductsAreFilteredBySizesForMen();
 
     }
-    @Then("^products displayed are filtered by all four filter options")
-    public void products_displayed_are_filtered_by_all_four_filter_options() {
 
-    }
-*/
 
-    @Given("^user is on Clothes page")
-    public void userIsOnClothesPage() {
-        top.act()
-                .selectClothes();
-    }
 
 
 
