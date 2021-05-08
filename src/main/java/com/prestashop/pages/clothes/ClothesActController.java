@@ -76,8 +76,6 @@ public class ClothesActController {
         return this;
     }
 
-
-
     public ClothesActController clickRelevenceButton() {
         driver.findElement(By.className("products-sort-order"))
                 .click();
