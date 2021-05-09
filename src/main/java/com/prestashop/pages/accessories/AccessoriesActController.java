@@ -39,7 +39,7 @@ public class AccessoriesActController {
         return this;
     }
 
-    public AccessoriesActController clickRelevenceButton() {
+    public AccessoriesActController clickRelevanceButton() {
         driver.findElement(By.className("products-sort-order"))
                 .click();
         return this;

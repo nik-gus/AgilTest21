@@ -1,8 +1,6 @@
 package stepdefinitions;
 
 import com.prestashop.pages.accessories.AccessoriesPage;
-import com.prestashop.pages.cart.CartPage;
-import com.prestashop.pages.order.OrderPage;
 import com.prestashop.pages.top.TopMenu;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -12,8 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
-import static com.prestashop.pages.cart.CartPage.getCartPage;
-import static com.prestashop.pages.order.OrderPage.getOrderPage;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
@@ -43,7 +39,7 @@ public class SortAccessoriesSteps {
     @When(": User chooses to sort products by A To Z")
     public void user_chooses_to_sort_products_by_a_to_z() {
         accessories.act()
-                .clickRelevenceButton()
+                .clickRelevanceButton()
                 .clickNameAToZ();
     }
 
@@ -56,7 +52,7 @@ public class SortAccessoriesSteps {
     @When(": User chooses to sort products by Z To A")
     public void userChoosesToSortProductsByZToA() {
         accessories.act()
-                .clickRelevenceButton()
+                .clickRelevanceButton()
                 .clickNameZToA();
     }
 
@@ -69,14 +65,14 @@ public class SortAccessoriesSteps {
     @When(": User chooses to sort products by Low To High")
     public void userChoosesToSortProductsByLowToHigh() {
         accessories.act()
-                .clickRelevenceButton()
+                .clickRelevanceButton()
                 .clickLowToHigh();
     }
 
     @When(": User chooses to sort products by High To Low")
     public void userChoosesToSortProductsByHighToLow() {
         accessories.act()
-                .clickRelevenceButton()
+                .clickRelevanceButton()
                 .clickHighToLow();
     }
 
