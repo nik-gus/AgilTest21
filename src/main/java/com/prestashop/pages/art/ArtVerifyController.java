@@ -1,5 +1,6 @@
 package com.prestashop.pages.art;
 
+import com.prestashop.pages.clothes.ClothesVerifyController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -81,5 +82,68 @@ public class ArtVerifyController {
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.desc");
         return this;
     }
+
+    public ArtVerifyController verifyArtDropDownAtoZ(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Name, A to Z\n" +
+                "      ");
+        return this;
+    }
+
+    public ArtVerifyController verifyArtDropDownZtoA(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Name, Z to A\n" +
+                "      ");
+        return this;
+    }
+
+    public ArtVerifyController verifyArtDropLowToHigh(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Price, low to high\n" +
+                "      ");
+        return this;
+    }
+
+    public ArtVerifyController verifyArtDropdownHightoLow(){
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+        assertEquals(filter, "\n" +
+                "        Price, high to low\n" +
+                "      ");
+        return this;
+    }
+
+
+
 
 }

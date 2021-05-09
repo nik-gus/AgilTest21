@@ -43,7 +43,7 @@ public class SortArtSteps {
     @Then("the page of art products sorted from A to Z appears")
     public void the_page_of_art_products_sorted_from_A_to_Z_appears() {
 
-        art.verify().verifySortAToZPage();
+        art.verify().verifyArtDropDownAtoZ().verifySortAToZPage();
 
     }
     @When("user choose sort Z-A option")
@@ -55,7 +55,7 @@ public class SortArtSteps {
     @Then("the page of art products sorted from Z to A appears")
     public void the_page_of_art_products_sorted_from_Z_to_A_appears() {
 
-        art.verify().verifySortZToAPage();
+        art.verify().verifyArtDropDownZtoA().verifySortZToAPage();
 
     }
     @When("user choose sort on low to high price option")
@@ -66,7 +66,7 @@ public class SortArtSteps {
     @Then("the page of art products sorted from low to high price appears")
     public void the_page_of_art_products_sorted_from_low_to_high_price_appears() {
 
-        art.verify().verifySortLowToHighPricePage();
+        art.verify().verifyArtDropLowToHigh().verifySortLowToHighPricePage();
 
     }
 
@@ -79,7 +79,7 @@ public class SortArtSteps {
     @Then("the page of art products sorted from high to low price appears")
     public void the_page_of_art_products_sorted_from_high_to_low_price_appears() {
 
-        art.verify().verifySortHighToLowPricePage();
+        art.verify().verifyArtDropdownHightoLow().verifySortHighToLowPricePage();
 
     }
 }

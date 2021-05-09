@@ -116,17 +116,21 @@ public class ClothesVerifyController {
 
     public ClothesVerifyController verifyDropDownPriceLowToHigh(){
 
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-       String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
-       assertEquals(filter, "\n" +
+        // fungerar ej med wait.until av någon anledning..
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")));
+
+        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
+
+        assertEquals(filter, "\n" +
                "        Price, low to high\n" +
                "      ");
-
        return this;
     }
 
@@ -142,7 +146,6 @@ public class ClothesVerifyController {
         assertEquals(filter, "\n" +
                 "        Price, high to low\n" +
                 "      ");
-
         return this;
     }
 
@@ -158,7 +161,6 @@ public class ClothesVerifyController {
         assertEquals(filter, "\n" +
                 "        Name, A to Z\n" +
                 "      ");
-
         return this;
     }
 
@@ -174,7 +176,6 @@ public class ClothesVerifyController {
         assertEquals(filter, "\n" +
                 "        Name, Z to A\n" +
                 "      ");
-
         return this;
     }
 
