@@ -1,12 +1,10 @@
 package com.prestashop.pages.art;
 
-import com.prestashop.pages.clothes.ClothesVerifyController;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.prestashop.pages.art.ArtPage.activeSearchFilter;
+import static com.prestashop.pages.art.ArtPage.*;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,19 +15,16 @@ public class ArtVerifyController {
     private WebDriver driver = getDriver();
     private WebDriverWait wait = getWebDriverWait();
 
-
     public ArtVerifyController verifyPackResults(){
         wait.until(ExpectedConditions.urlContains("search&s=Pack"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Pack");
         return this;
     }
 
-
     public ArtVerifyController verifyPaperResults(){
         wait.until(ExpectedConditions.urlContains("search&s=Paper"));
         assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Paper");
         return this;
-
     }
 
     public ArtVerifyController verifyColourResults(){
@@ -45,10 +40,20 @@ public class ArtVerifyController {
         return this;
     }
 
-
-    public ArtVerifyController urlContains(String fraction) {
+    public ArtVerifyController urlContainsFilter(String fraction) {
         assertTrue(wait.until(ExpectedConditions.urlContains
                 (fraction.replaceAll("\\s","+"))));
+        return this;
+    }
+
+    public ArtVerifyController urlContainsSortOrder(String sortBy) {
+        switch (sortBy) {
+            case "Name, A to Z" -> assertTrue(wait.until(ExpectedConditions.urlContains(SORT_ORDER_NAME_ASC)));
+            case "Name, Z to A" -> assertTrue(wait.until(ExpectedConditions.urlContains(SORT_ORDER_NAME_DESC)));
+            case "Price, low to high" -> assertTrue(wait.until(ExpectedConditions.urlContains(SORT_ORDER_PRICE_ASC)));
+            case "Price, high to low" -> assertTrue(wait.until(ExpectedConditions.urlContains(SORT_ORDER_PRICE_DESC)));
+            default -> throw new IllegalStateException("Unexpected sort order: " + sortBy);
+        }
         return this;
     }
 
@@ -58,92 +63,10 @@ public class ArtVerifyController {
         return this;
     }
 
-
-    public ArtVerifyController verifySortAToZPage(){
-        wait.until(ExpectedConditions.urlContains("product.name.asc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.asc");
+    public ArtVerifyController artProductsIsSortedBy(String sortBy) {
+        assertTrue(wait.until(ExpectedConditions.attributeContains
+                (currentSortBy(), "text", sortBy)));
         return this;
     }
-
-    public ArtVerifyController verifySortZToAPage(){
-        wait.until(ExpectedConditions.urlContains("product.name.desc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.name.desc");
-        return this;
-    }
-
-    public ArtVerifyController verifySortLowToHighPricePage(){
-        wait.until(ExpectedConditions.urlContains("product.price.asc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.asc");
-        return this;
-    }
-
-    public ArtVerifyController verifySortHighToLowPricePage(){
-        wait.until(ExpectedConditions.urlContains("product.price.desc"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/9-art?order=product.price.desc");
-        return this;
-    }
-
-    public ArtVerifyController verifyArtDropDownAtoZ(){
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
-        assertEquals(filter, "\n" +
-                "        Name, A to Z\n" +
-                "      ");
-        return this;
-    }
-
-    public ArtVerifyController verifyArtDropDownZtoA(){
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
-        assertEquals(filter, "\n" +
-                "        Name, Z to A\n" +
-                "      ");
-        return this;
-    }
-
-    public ArtVerifyController verifyArtDropLowToHigh(){
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
-        assertEquals(filter, "\n" +
-                "        Price, low to high\n" +
-                "      ");
-        return this;
-    }
-
-    public ArtVerifyController verifyArtDropdownHightoLow(){
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        String filter = driver.findElement(By.cssSelector("div#js-product-list-top a.select-list.current.js-search-link")).getAttribute("text");
-        assertEquals(filter, "\n" +
-                "        Price, high to low\n" +
-                "      ");
-        return this;
-    }
-
-
-
 
 }

@@ -43,7 +43,7 @@ public class FilterArtSteps {
     @Then("^products displayed is filtered by a single filter (.*)$")
     public void productsDisplayedIsFilteredByASingleFilter(String filter) {
         art.verify()
-                .urlContains(filter)
+                .urlContainsFilter(filter)
                 .filterIsActive(filter);
     }
 
@@ -57,8 +57,8 @@ public class FilterArtSteps {
     @Then("^displayed products is filtered by (.*) and (.*)$")
     public void displayedProductsIsFilteredByFilter1AndFilter2(String filter1, String filter2) {
         art.verify()
-                .urlContains(filter1)
-                .urlContains(filter2)
+                .urlContainsFilter(filter1)
+                .urlContainsFilter(filter2)
                 .filterIsActive(filter1)
                 .filterIsActive(filter2);
     }

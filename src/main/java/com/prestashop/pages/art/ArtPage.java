@@ -4,6 +4,15 @@ import org.openqa.selenium.By;
 
 public class ArtPage {
 
+    public static final String SORT_ORDER_NAME_ASC =
+            "product.name.asc";
+    public static final String SORT_ORDER_NAME_DESC =
+            "product.name.desc";
+    public static final String SORT_ORDER_PRICE_ASC =
+            "product.price.asc";
+    public static final String SORT_ORDER_PRICE_DESC =
+            "product.price.desc";
+
     private ArtActController act;
     private ArtVerifyController verify;
 
@@ -22,5 +31,9 @@ public class ArtPage {
     public ArtVerifyController verify() { return verify; }
 
     public static By activeSearchFilter() { return By.id("js-active-search-filters"); }
+
+    public static By currentSortBy() { return By.cssSelector("a[class='select-list current js-search-link']"); }
+    public static By sortByLink(String linkText) { return By.partialLinkText(linkText); }
+
 
 }
