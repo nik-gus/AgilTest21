@@ -112,13 +112,7 @@ public class ClothesVerifyController {
     }
 
 
-
-
-    public ClothesVerifyController verifyHummingbirdResults(){
-        wait.until(ExpectedConditions.urlContains("search&s=Hummingbird"));
-        assertEquals(driver.getCurrentUrl(), "http://40.76.27.113:8085/en/search?controller=search&s=Hummingbird");
-        return this;
-    }
+    
 
     public ClothesVerifyController verifyDropDownPriceLowToHigh(){
 
