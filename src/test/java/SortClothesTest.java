@@ -23,7 +23,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .subPageMen();
         clothes.act()
-                .clickRelevanceButton()
+                .clickRelevenceButton()
                 .clickLowToHigh();
         clothes.verify()
                 .verifyDropDownPriceLowToHigh()
@@ -42,7 +42,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .subPageMen();
         clothes.act()
-                .clickRelevanceButton()
+                .clickRelevenceButton()
                 .clickHighToLow();
         clothes.verify()
                 .verifyDropDownPriceHighToLow()
@@ -61,7 +61,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .subPageMen();
         clothes.act()
-                .clickRelevanceButton()
+                .clickRelevenceButton()
                 .clickNameAToZ();
         clothes.verify()
                 .verifyDropDownAtoZ()
@@ -80,7 +80,7 @@ class SortClothesTest extends BaseTestClass {
         clothes.verify()
                 .subPageMen();
         clothes.act()
-                .clickRelevanceButton()
+                .clickRelevenceButton()
                 .clickNameZToA();
         clothes.verify()
                 .verifyDropDownZtoA()

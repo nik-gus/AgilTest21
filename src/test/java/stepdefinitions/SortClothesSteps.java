@@ -43,7 +43,7 @@ public class SortClothesSteps {
     public void user_choose_sort_a_z_option_for_clothes() {
 
         clothes.act()
-                .clickRelevanceButton()
+                .clickRelevenceButton()
                 .clickNameAToZ();
 
     }
@@ -58,7 +58,7 @@ public class SortClothesSteps {
     @When("user choose sort Z-A option for clothes")
     public void user_choose_sort_z_a_option_for_clothes() {
 
-        clothes.act().clickRelevanceButton().clickNameZToA();
+        clothes.act().clickRelevenceButton().clickNameZToA();
 
     }
 
@@ -73,7 +73,7 @@ public class SortClothesSteps {
     @When("user choose sort on low to high price option for clothes")
     public void user_choose_sort_on_low_to_high_price_option_for_clothes() {
 
-        clothes.act().clickRelevanceButton().clickLowToHigh();
+        clothes.act().clickRelevenceButton().clickLowToHigh();
 
     }
     @Then("the page of clothes sorted from low to high price appears")
@@ -86,7 +86,7 @@ public class SortClothesSteps {
     @When("user choose sort on high to low price option for clothes")
     public void user_choose_sort_on_high_to_low_price_option_for_clothes() {
 
-        clothes.act().clickRelevanceButton().clickHighToLow();
+        clothes.act().clickRelevenceButton().clickHighToLow();
 
     }
     @Then("the page of clothes sorted from high to low price appears")
