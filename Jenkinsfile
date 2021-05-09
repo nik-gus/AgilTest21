@@ -31,20 +31,10 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            echo 'This will always run'
-            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-            junit '**/target/surefire-reports/TEST-*.xml'
-        }
-        success {
-            echo 'This will run only if successful'      
-        }
-        unstable {
-            echo 'This will run only if the run was unstable'
-        }
-        changed {
-            echo 'This will run only if the state of the pipeline has changed'
+        post {
+            success {
+                junit 'target/surefire-reports/**/*.xml'                       
+            }
         }
     }
 }
