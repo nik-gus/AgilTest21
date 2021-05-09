@@ -23,7 +23,8 @@ public class ArtActController {
     }
 
     public ArtActController selectSortArtBy(String sortBy) {
-        driver.findElement(sortByLink(sortBy))
+        wait.until(ExpectedConditions.elementToBeClickable
+                (driver.findElement(sortByLink(sortBy))))
                 .click();
         return this;
     }

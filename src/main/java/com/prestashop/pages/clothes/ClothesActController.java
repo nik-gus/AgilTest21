@@ -47,25 +47,29 @@ public class ClothesActController {
     }
 
     public ClothesActController clickLowToHigh() {
-        driver.findElement(By.partialLinkText("Price, low to high"))
+        wait.until(ExpectedConditions.elementToBeClickable
+                (driver.findElement(By.partialLinkText("Price, low to high"))))
                 .click();
         return this;
     }
 
     public ClothesActController clickHighToLow() {
-        driver.findElement(By.partialLinkText("Price, high to low"))
+        wait.until(ExpectedConditions.elementToBeClickable
+                (driver.findElement(By.partialLinkText("Price, high to low"))))
                 .click();
         return this;
     }
 
     public ClothesActController clickNameAToZ() {
-        driver.findElement(By.partialLinkText("Name, A to Z"))
+        wait.until(ExpectedConditions.elementToBeClickable
+                (driver.findElement(By.partialLinkText("Name, A to Z"))))
                 .click();
         return this;
     }
 
     public ClothesActController clickNameZToA() {
-        driver.findElement(By.partialLinkText("Name, Z to A"))
+        wait.until(ExpectedConditions.elementToBeClickable
+                (driver.findElement(By.partialLinkText("Name, Z to A"))))
                 .click();
         return this;
     }
