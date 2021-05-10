@@ -34,6 +34,13 @@ pipeline {
         }
         success {
             archiveArtifacts artifacts: '**/target/*.jar'
+            publishHTML (target : [allowMissing: true,
+                                   alwaysLinkToLastBuild: false,
+                                   keepAll: false,
+                                   reportDir: 'reports',
+                                   reportFiles: 'prestashopReport.html',
+                                   reportName: 'Prestashop Reports',
+                                   reportTitles: 'The Report'])
         }
         changed {
             echo 'The build status has changed'
