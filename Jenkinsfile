@@ -32,7 +32,7 @@ pipeline {
         }
     }
     post {
-        success {
+        always {
             junit skipPublishingChecks: true,
                       testResults: 'target/surefire-reports/**/*.xml'                       
         }
