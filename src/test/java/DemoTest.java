@@ -1,5 +1,6 @@
 import com.prestashop.pages.clothes.ClothesPage;
 import com.prestashop.pages.top.TopMenu;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
  class DemoTest extends BaseTestClass{
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
     TopMenu top = TopMenu.getTopMenu();
     ClothesPage clothes = ClothesPage.getClothesPage();
 
+    @Disabled("For demo purpose only")
     @Test
     void testFilterBlaBla() {
         top.act()
