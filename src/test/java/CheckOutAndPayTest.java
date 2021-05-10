@@ -11,8 +11,7 @@ import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.cart.CartPage.PAGE_TITLE_CART;
 import static com.prestashop.pages.cart.CartPage.getCartPage;
 import static com.prestashop.pages.clothes.ClothesPage.*;
-import static com.prestashop.pages.clothes.Size.EXTRA_LARGE;
-import static com.prestashop.pages.clothes.Size.LARGE;
+import static com.prestashop.pages.clothes.Size.*;
 import static com.prestashop.pages.order.OrderPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 import static com.prestashop.utils.TestDataGenerator.*;
@@ -76,7 +75,7 @@ class CheckOutAndPayTest extends BaseTestClass {
                 .verifyPageTitle(PAGE_TITLE_CLOTHES);
         clothes.act()
                 .selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_SWEATER)
-                .chooseSize(LARGE)
+                .chooseSize(SMALL)
                 .addToCart();
         clothes.verify()
                 .successfullyAddedToShoppingCart();
@@ -114,7 +113,7 @@ class CheckOutAndPayTest extends BaseTestClass {
                 .selectClothes();
         clothes.act()
                 .selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_SWEATER)
-                .chooseSize(EXTRA_LARGE)
+                .chooseSize(MEDIUM)
                 .addToCart()
                 .proceedToCart();
         cart.act()
