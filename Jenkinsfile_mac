@@ -38,8 +38,8 @@ pipeline {
                                    alwaysLinkToLastBuild: false,
                                    keepAll: false,
                                    reportDir: 'reports',
-                                   reportFiles: 'prestashopReport.html',
-                                   reportName: 'Prestashop Reports',
+                                   reportFiles: 'index.html',
+                                   reportName: 'HTML Report',
                                    reportTitles: 'The Report'])
         }
         changed {
