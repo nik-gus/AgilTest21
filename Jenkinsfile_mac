@@ -39,7 +39,7 @@ pipeline {
                                    keepAll: false,
                                    reportDir: 'reports',
                                    reportFiles: 'index.html',
-                                   reportName: 'HTML Report',
+                                   reportName: 'HTMLReport',
                                    reportTitles: 'The Report'])
         }
         changed {
