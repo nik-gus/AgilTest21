@@ -31,11 +31,10 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            junit skipPublishingChecks: true,
-                      testResults: 'target/surefire-reports/**/*.xml'                       
+        post {
+            success {
+                junit 'target/surefire-reports/**/*.xml'                       
+            }
         }
-    }
     
 }
