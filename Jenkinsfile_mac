@@ -34,7 +34,7 @@ pipeline {
         }
         success {
             archiveArtifacts artifacts: '**/target/*.jar'
-            publishHTML (target : [allowMissing: true,
+            publishHTML ([allowMissing: true,
                                    alwaysLinkToLastBuild: false,
                                    keepAll: false,
                                    reportDir: 'reports',
