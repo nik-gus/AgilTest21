@@ -32,7 +32,7 @@ class CheckOutAndPayTest extends BaseTestClass {
                 .verifyPageTitle(PAGE_TITLE_CLOTHES);
         clothes.act()
                 .selectArticleOfClothingByName(HUMMINGBIRD_PRINTED_T_SHIRT)
-                .chooseSize(Size.MEDIUM)
+                .chooseSize(SMALL)
                 .chooseColor(Color.BLACK)
                 .addToCart();
         clothes.verify()
