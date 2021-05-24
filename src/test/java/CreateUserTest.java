@@ -2,7 +2,7 @@ import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
 import org.junit.jupiter.api.Test;
 
-class CorrectUserTest extends BaseTestClass {
+class CreateUserTest extends BaseTestClass {
     TopMenu top = TopMenu.getTopMenu();
     AuthPage authPage = AuthPage.getAuthPage();
 
@@ -17,7 +17,7 @@ class CorrectUserTest extends BaseTestClass {
                 .enterLastName("Tester")
                 .enterRandomizedEmail()
                 .enterPassword("Password1")
-                .enterBirthday("01/01/1956")
+                .enterBirthday("1999-01-01")
                 .selectReceiveOffers()
                 .subscribeToNewsletter()
                 .agreeToTerms()

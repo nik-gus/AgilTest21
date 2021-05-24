@@ -1,4 +1,4 @@
-Feature: Filter by Category
+Feature: Filter Accessories
 
   Scenario: User Filters by Home Option
     Given : User is on Accessorie page

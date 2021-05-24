@@ -32,6 +32,8 @@ public class ArtPage {
 
     public static By activeSearchFilter() { return By.id("js-active-search-filters"); }
 
+    public static By sortByDropDown() { return By.className("products-sort-order"); }
+
     public static By currentSortBy() { return By.cssSelector("a[class='select-list current js-search-link']"); }
     public static By sortByLink(String linkText) { return By.partialLinkText(linkText); }
 

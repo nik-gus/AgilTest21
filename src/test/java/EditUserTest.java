@@ -1,18 +1,18 @@
 import com.prestashop.pages.authentication.AuthPage;
 import com.prestashop.pages.top.TopMenu;
-import com.prestashop.pages.user.UserPage;
+import com.prestashop.pages.account.AccountPage;
 import org.junit.jupiter.api.Test;
 
 import static com.prestashop.pages.authentication.AuthPage.*;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
-import static com.prestashop.pages.user.UserPage.getUserPage;
+import static com.prestashop.pages.account.AccountPage.getUserPage;
 import static com.prestashop.utils.TestDataGenerator.*;
 
 class EditUserTest extends BaseTestClass{
 
     TopMenu top = getTopMenu();
     AuthPage auth = getAuthPage();
-    UserPage user = getUserPage();
+    AccountPage account = getUserPage();
 
     @Test
     void changeUserAddress1() {
@@ -22,12 +22,12 @@ class EditUserTest extends BaseTestClass{
                 .enterEmail(TEST_USER_EMAIL)
                 .enterPassword(TEST_USER_PASSWORD)
                 .signIn();
-        user.act()
+        account.act()
                 .clickOnAddressesLink()
                 .clickOnUpdateLink()
                 .changeAddress1(generateAddress())
                 .clickOnSaveButton();
-        user.verify()
+        account.verify()
                 .addressUpdated();
     }
 

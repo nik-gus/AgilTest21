@@ -25,11 +25,13 @@ public class BaseTestClass {
     @BeforeEach
     public void init() {
         driver.get("http://40.76.27.113:8085/en/");
+        //driver.get("http://localhost:8001");
     }
 
     @AfterEach
     public void cleanUp() {
         driver.get("http://40.76.27.113:8085/en/?mylogout=");
+        //driver.get("http://localhost:8001/index.php?mylogout=");
     }
 
     @AfterAll

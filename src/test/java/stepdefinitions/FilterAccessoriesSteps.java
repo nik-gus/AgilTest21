@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static com.prestashop.pages.accessories.AccessoriesPage.getAccessoriesPage;
 
-public class FilterAccessoriesByCategorySteps {
+public class FilterAccessoriesSteps {
     TopMenu top = TopMenu.getTopMenu();
     AccessoriesPage accessories = getAccessoriesPage();
 

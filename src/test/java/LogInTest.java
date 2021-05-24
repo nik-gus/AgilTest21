@@ -13,14 +13,28 @@ class LogInTest extends BaseTestClass {
     void testLogIn() {
         top.act()
                 .selectSignInButton()
-                .andThen()
-                .verifyPageTitle("Login");
+                    .andThen()
+                .verifyPageTitle(PAGE_TITLE_LOGIN);
         authPage.act()
-                .enterEmail("tolvan1@mail.com")
-                .enterPassword("tolvan1")
+                .enterEmail(TEST_USER_EMAIL)
+                .enterPassword(TEST_USER_PASSWORD)
                 .signIn();
         top.verify()
-                .userLoggedIn("tolvan tolvansson");
+                .userLoggedIn("Tolvan Tolvansson");
+    }
+
+    @Test
+    void testFailedLoginIncorrectPassword() {
+        top.act()
+                .selectSignInButton()
+                .andThen()
+                .verifyPageTitle(PAGE_TITLE_LOGIN);
+        authPage.act()
+                .enterEmail(TEST_USER_EMAIL)
+                .enterPassword("ttolvan")
+                .signIn();
+        authPage.verify()
+                .authenticationFailed();
     }
 
 }

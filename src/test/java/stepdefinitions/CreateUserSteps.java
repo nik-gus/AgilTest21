@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static com.prestashop.utils.DriverFactory.getDriver;
 import static com.prestashop.utils.DriverFactory.getWebDriverWait;
 
-public class CorrectUserSteps {
+public class CreateUserSteps {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
@@ -37,7 +37,6 @@ public class CorrectUserSteps {
     public void UserHomePage() {
         top.act()
                 .selectSignInButton();
-
     }
 
     @When("User input valid information")

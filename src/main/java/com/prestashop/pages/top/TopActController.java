@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.prestashop.pages.top.TopMenu.*;
@@ -53,6 +54,12 @@ public class TopActController {
 
     public TopActController selectArt() {
         driver.findElement(artLink())
+                .click();
+        return this;
+    }
+
+    public TopActController navigateToPage(String linkText) {
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(pageLink(linkText))))
                 .click();
         return this;
     }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.prestashop.pages.authentication.AuthPage.getAuthPage;
 import static com.prestashop.pages.top.TopMenu.getTopMenu;
 
-class IncorrectUserTest extends BaseTestClass{
+class CreateIncorrectUserTest extends BaseTestClass{
     TopMenu top = getTopMenu();
     AuthPage authPage = getAuthPage();
 

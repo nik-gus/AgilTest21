@@ -45,7 +45,10 @@ public class TopMenu {
         return By.id("category-6");
     }
     public static By artLink() { return By.id("category-9"); }
+    public static By pageLink(String linkText) {return By.partialLinkText(linkText); }
     public static By cartLink() { return By.cssSelector("#_desktop_cart > div > div > a"); }
+
+
 
 
 }

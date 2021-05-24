@@ -1,4 +1,4 @@
-Feature: Correct user
+Feature: Create User
 
   Scenario: Correct user is created
 

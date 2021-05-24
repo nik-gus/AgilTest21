@@ -28,7 +28,6 @@ public class SearchSteps {
 
     @Given("user is on homepage")
     public void UserOnHomePage(){
-
     }
 
     @When("^user search (.*)$")
@@ -43,4 +42,5 @@ public class SearchSteps {
         search.verify()
                 .verifyItem(item, result);
     }
+
 }

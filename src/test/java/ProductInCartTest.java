@@ -26,17 +26,16 @@ class ProductInCartTest extends BaseTestClass {
         clothes.verify()
                 .successfullyAddedToShoppingCart();
 
-        //Closing the checkoutpage
-        cart.act().continueShopping();
-        //Going to the cart
+        //BÖR DELAS UPP I TVÅ TESTFALL HÄR
+
+        cart.act()
+                .continueShopping();
         top.act()
                 .selectCart();
-
-        //Empty the cart
-        cart.act().removeThingInCart();
-
-        //Check that the cart was empty
-        cart.verify().checkThatCartIsEmpty();
+        cart.act()
+                .removeThingInCart();
+        cart.verify()
+                .checkThatCartIsEmpty();
     }
 
 }

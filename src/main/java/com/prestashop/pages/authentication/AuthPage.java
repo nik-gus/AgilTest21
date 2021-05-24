@@ -3,7 +3,8 @@ package com.prestashop.pages.authentication;
 import org.openqa.selenium.By;
 
 public class AuthPage {
-
+    public static final String PAGE_TITLE_LOGIN =
+            "Login";
     public static final String TEST_USER_EMAIL =
             "tolvan@mail.com";
     public static final String TEST_USER_PASSWORD =
